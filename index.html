@@ -16,351 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --bg-color: #f8fafc;
-            --text-color: #1e293b;
-            --accent-gold: #d4af37;
-            --dark-navy: #0f172a;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-        }
-
-        body {
-            font-family: 'Noto Sans Myanmar', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.8;
-            scroll-behavior: smooth;
-        }
-
-        h1, h2, h3, .serif-font {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* 🌟 ELEGANT BILATERAL HERO SECTION (MYANMAR + JAPAN FUSION) */
-        .hero-section {
-            position: relative;
-            height: 78vh;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ffffff;
-            /* မြန်မာ့ရွှေရောင် ပုဂံအမွေအနှစ်နှင့် ဂျပန် Zen အငွေ့အသက် ပေါင်းစပ်ထားသော နောက်ခံ */
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.7) 100%), 
-                        url('https://images.unsplash.com/photo-1662657080109-d531980fd806?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
-            border-bottom: 3px solid var(--accent-gold);
-            padding: 0 20px;
-            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
-        }
-
-
-        .hero-tag {
-            letter-spacing: 3px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            color: var(--accent-gold);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.15rem;
-            font-weight: 300;
-            color: #e2e8f0;
-            max-width: 700px;
-            margin: 0 auto 35px auto;
-        }
-
-        .btn-elegant {
-            background-color: transparent;
-            color: var(--accent-gold);
-            border: 2px solid var(--accent-gold);
-            padding: 12px 35px;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-elegant:hover {
-            background-color: var(--accent-gold);
-            color: var(--dark-navy);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        /* 📚 DOCUMENT REPOSITORY CARDS (THE 7 FILES) */
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--dark-navy);
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #64748b;
-            font-size: 1.05rem;
-        }
-
-        /* Featured Master Roadmap Card */
-        .master-card {
-            background: linear-gradient(145deg, #0f172a, #1e293b);
-            color: white;
-            border-radius: 16px;
-            padding: 35px;
-            border: 1px solid #334155;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .master-card::after {
-            content: '★ MASTER FILE';
-            position: absolute;
-            top: 20px;
-            right: -30px;
-            background: var(--accent-gold);
-            color: var(--dark-navy);
-            font-weight: 700;
-            font-size: 0.7rem;
-            padding: 5px 35px;
-            transform: rotate(45deg);
-        }
-    /* 🌟 AUTHOR BADGE IN HERO SECTION */
-    .author-pill {
-        display: inline-flex;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 6px 18px;
-        border-radius: 50px;
-        font-size: 0.9rem;
-        color: #e2e8f0;
-        margin-bottom: 30px;
-        backdrop-filter: blur(5px);
-    }
-
-    .github-btn {
-        color: var(--accent-gold);
-        text-decoration: none;
-        font-weight: 600;
-        margin-left: 8px;
-        transition: color 0.2s;
-    }
-
-    .github-btn:hover {
-        color: #ffffff;
-        text-decoration: underline;
-    }
-
-    /* 📖 RENDERED MARKDOWN MODAL STYLING */
-    .markdown-body {
-        font-family: 'Noto Sans Myanmar', sans-serif;
-        color: #1e293b;
-        line-height: 1.9;
-        padding: 15px;
-    }
-    .markdown-body h1, .markdown-body h2, .markdown-body h3 {
-        font-family: 'Playfair Display', serif;
-        color: #0f172a;
-        font-weight: 700;
-        margin-top: 1.5em;
-        margin-bottom: 0.5em;
-        border-bottom: 2px solid #f1f5f9;
-        padding-bottom: 8px;
-    }
-    .markdown-body table {
-        width: 100%;
-        margin: 20px 0;
-        border-collapse: collapse;
-    }
-    .markdown-body th, .markdown-body td {
-        border: 1px solid #cbd5e1;
-        padding: 12px;
-        text-align: left;
-    }
-    .markdown-body th {
-        background-color: #f8fafc;
-        color: #0f172a;
-        font-weight: 600;
-    }
-    .markdown-body blockquote {
-        border-left: 4px solid var(--accent-gold);
-        background-color: #fffbeb;
-        padding: 15px 20px;
-        margin: 20px 0;
-        border-radius: 0 8px 8px 0;
-        color: #334155;
-    }
-    .markdown-body code {
-        background-color: #f1f5f9;
-        color: #e11d48;
-        padding: 3px 6px;
-        border-radius: 4px;
-        font-family: monospace;
-        font-size: 0.9em;
-    }
-
-    /* 🌐 FOOTER & LICENSE SECTION */
-    .license-box {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 20px;
-        max-width: 800px;
-        margin: 20px auto 30px auto;
-        font-size: 0.85rem;
-        color: #cbd5e1;
-        line-height: 1.7;
-    }
-
-    .visitor-stats {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: rgba(0, 0, 0, 0.3);
-        padding: 8px 16px;
-        border-radius: 8px;
-        border: 1px solid #334155;
-        font-size: 0.85rem;
-        color: #94a3b8;
-    }
-        /* Regular Step Cards */
-        .doc-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 25px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-            transition: transform 0.3s, box-shadow 0.3s;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .doc-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
-            border-color: #cbd5e1;
-        }
-
-        .doc-icon {
-            font-size: 2rem;
-            color: #3b82f6;
-            margin-bottom: 15px;
-        }
-
-        .step-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #64748b;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .doc-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--dark-navy);
-            margin-bottom: 10px;
-        }
-
-        .doc-desc {
-            color: #475569;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .file-badge {
-            background-color: #f1f5f9;
-            color: #475569;
-            font-family: monospace;
-            font-size: 0.8rem;
-            padding: 4px 8px;
-            border-radius: 6px;
-            display: inline-block;
-            margin-bottom: 15px;
-            border: 1px solid #e2e8f0;
-        }
-
-        /* Button groups */
-        .btn-group-custom {
-            display: flex;
-            gap: 10px;
-            border-top: 1px solid #f1f5f9;
-            padding-top: 15px;
-        }
-
-        .btn-custom-outline {
-            border: 1px solid #cbd5e1;
-            color: var(--dark-navy);
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 8px 14px;
-            border-radius: 8px;
-            text-decoration: none;
-            flex: 1;
-            text-align: center;
-            transition: all 0.2s;
-        }
-
-        .btn-custom-outline:hover {
-            background-color: #f8fafc;
-            border-color: #94a3b8;
-            color: var(--dark-navy);
-        }
-
-        .btn-custom-primary {
-            background-color: var(--dark-navy);
-            color: #ffffff;
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 8px 14px;
-            border-radius: 8px;
-            text-decoration: none;
-            flex: 1;
-            text-align: center;
-            transition: all 0.2s;
-        }
-
-        .btn-custom-primary:hover {
-            background-color: #1e293b;
-            color: var(--accent-gold);
-        }
-
-        footer {
-            background-color: var(--dark-navy);
-            color: #94a3b8;
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 80px;
-            border-top: 3px solid var(--accent-gold);
-        }
-
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            .btn-group-custom { flex-direction: column; }
-        }
-    </style>
+    <!-- 🎨 EXTERNAL CSS LINK -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -394,7 +51,22 @@
         </div>
     </header>
 
-<main class="container my-5 pt-4" id="repository">
+    <main class="container my-5 pt-4" id="repository">
+        <div class="text-center">
+            <div class="quick-share-bar">
+                <span class="small fw-bold text-secondary me-1"><i class="bi bi-share-fill text-warning me-1"></i> လမ်းညွှန်ကို မျှဝေရန် -</span>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frobinglory.github.io%2Fmyanmar-mext-2027-roadmap%2F" target="_blank" class="share-btn bg-fb" title="Share on Facebook"><i class="bi bi-facebook"></i></a>
+                <!-- Telegram -->
+                <a href="https://t.me/share/url?url=https%3A%2F%2Frobinglory.github.io%2Fmyanmar-mext-2027-roadmap%2F&text=MEXT%202027%20Complete%20Roadmap%20and%20Guidelines%20Portal" target="_blank" class="share-btn bg-tg" title="Share on Telegram"><i class="bi bi-telegram"></i></a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Frobinglory.github.io%2Fmyanmar-mext-2027-roadmap%2F" target="_blank" class="share-btn bg-li" title="Share on LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <!-- Copy Link Button -->
+                <button onclick="copyPortalLink()" id="copyBtn" class="bg-copy d-inline-flex align-items-center gap-1">
+                    <i class="bi bi-link-45deg fs-5"></i> <span id="copyText">Copy Link</span>
+                </button>
+            </div>
+        </div>
         <div class="section-title">
             <h2>MEXT Golden Guidelines Repository</h2>
             <p>အလွယ်တကူ ဖတ်ရှုနိုင်ရန်နှင့် ဒေါင်းလုဒ်ဆွဲယူနိုင်ရန် စနစ်တကျ ခွဲခြားပေးထားသော မူရင်း Markdown (.md) ဖိုင်များ</p>
@@ -556,39 +228,160 @@
             </div>
 
         </div>
-</main>
+
+        <!-- 📊 ELEGANT MEXT 2027 STATISTICAL ANALYTICS DASHBOARD -->
+        <section id="analytics" class="analytics-wrapper my-5">
+            
+            <!-- 🌟 REDESIGNED EXECUTIVE DASHBOARD HEADER -->
+            <div class="analytics-hero-header">
+                <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                    <span class="analytics-tag"><i class="bi bi-bar-chart-line-fill me-1"></i> 2027 STATISTICAL REPORT</span>
+                    <span class="privacy-tag"><i class="bi bi-shield-check me-1"></i> Privacy Protected (Anonymized)</span>
+                </div>
+                
+                <h2>MEXT 2027 စာရင်းအင်းနှင့် အောင်မြင်နိုင်ခြေ ခွဲခြမ်းစိတ်ဖြာချက်</h2>
+                
+                <p>
+                    ၂၀၂၇ ခုနှစ် MEXT သုတေသနပညာသင်ဆု လျှောက်ထားခဲ့သည့် မြန်မာကျောင်းသား/သူများ၏ တရားဝင် စိစစ်ရွေးချယ်မှု အဆင့်ဆင့်မှ အချက်အလက်များကို အခြေခံ၍ နောင်လာနောက်သားများ အောင်မြင်နိုင်ခြေ (Probability) ကို သိပ္ပံနည်းကျ တွက်ချက်ပြသထားခြင်း ဖြစ်ပါသည်။ (ကျောင်းသားများ၏ ကိုယ်ရေးလုံခြုံမှုအတွက် အမည်နှင့် လျှို့ဝှက်အချက်အလက်များကို လုံးဝ ဖယ်ရှားပေးထားပါသည်)။
+                </p>
+            </div>
+
+            <!-- 🔢 ELEGANT FUNNEL STAT CARDS (FIXED OVERLAP & SPACING) -->
+            <!-- 🔢 ELEGANT FUNNEL STAT CARDS (5 STAGES VERIFIED DATA) -->
+            <div class="row g-3 mb-5 text-center">
+                <!-- Stage 1 -->
+                <div class="col-6 col-lg">
+                    <div class="stat-box-clean p-3 bg-white rounded-3 border h-100 d-flex flex-column justify-content-center shadow-sm">
+                        <span class="step-tag mb-1">Stage 1: ဖြေဆိုခွင့်ရ</span>
+                        <h3 class="fw-bold mb-2 stat-number" style="color: var(--dark-navy);">၁၂၄ <span class="fs-6 fw-normal text-muted">ဦး</span></h3>
+                        <small class="text-secondary d-block" style="font-size: 0.75rem;">Initial Applicants</small>
+                    </div>
+                </div>
+                <!-- Stage 2 -->
+                <div class="col-6 col-lg">
+                    <div class="stat-box-clean p-3 bg-white rounded-3 border h-100 d-flex flex-column justify-content-center shadow-sm">
+                        <span class="step-tag mb-1">Stage 2: ရေးဖြေအောင်</span>
+                        <h3 class="fw-bold mb-2 stat-number" style="color: #3b82f6;">၆၇ <span class="fs-6 fw-normal text-muted">ဦး</span></h3>
+                        <small class="text-success fw-bold d-block" style="font-size: 0.75rem;">၅၄.၀% Pass Rate</small>
+                    </div>
+                </div>
+                <!-- Stage 3 (ADDED) -->
+                <div class="col-6 col-lg">
+                    <div class="stat-box-clean p-3 bg-white rounded-3 border h-100 d-flex flex-column justify-content-center shadow-sm" style="border-color: #0284c7 !important;">
+                        <span class="step-tag mb-1" style="color: #0284c7;">Stage 3: MAJA ထောက်ခံ</span>
+                        <h3 class="fw-bold mb-2 stat-number" style="color: #0284c7;">၄၃ <span class="fs-6 fw-normal text-muted">ဦး</span></h3>
+                        <small class="text-info fw-bold d-block" style="font-size: 0.75rem;">၃၄.၇% Survival</small>
+                    </div>
+                </div>
+                <!-- Stage 4 -->
+                <div class="col-6 col-lg">
+                    <div class="stat-box-clean p-3 bg-white rounded-3 border h-100 d-flex flex-column justify-content-center shadow-sm">
+                        <span class="step-tag mb-1">Stage 4: သံရုံး အင်တာဗျူး</span>
+                        <h3 class="fw-bold mb-2 stat-number" style="color: #f59e0b;">၃၂ <span class="fs-6 fw-normal text-muted">ဦး</span></h3>
+                        <small class="text-secondary d-block" style="font-size: 0.75rem;">July 2026 Finalists</small>
+                    </div>
+                </div>
+                <!-- Final -->
+                <div class="col-12 col-lg">
+                    <div class="stat-box-clean p-3 rounded-3 border h-100 d-flex flex-column justify-content-center shadow" style="background: linear-gradient(145deg, #0f172a, #1e293b); border-color: #334155 !important;">
+                        <span class="text-warning small fw-bold tracking-wider d-block mb-1" style="font-size: 0.65rem;">★ EXPECTED WINNERS</span>
+                        <h3 class="fw-bold mb-2 stat-number" style="color: var(--accent-gold);">၁၅ ~ ၁၈ <span class="fs-6 fw-normal text-light">ဦး</span></h3>
+                        <small class="text-light d-block" style="font-size: 0.75rem; opacity: 0.8;">~၁၃.၅% Overall Chance</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 📈 CHARTS GRID -->
+            <div class="row g-4 mb-4">
+                <!-- Funnel Chart -->
+                <div class="col-lg-6">
+                    <div class="p-4 border rounded-3 bg-white h-100 shadow-sm" style="border-color: var(--border-color) !important;">
+                        <h6 class="fw-bold mb-3" style="color: var(--dark-navy); font-size: 1.05rem;">
+                            <i class="bi bi-bar-chart-fill text-primary me-2"></i>အဆင့်လိုက် ကျော်ဖြတ်နိုင်မှု ရာခိုင်နှုန်း (Selection Funnel)
+                        </h6>
+                        <canvas id="funnelChart" style="max-height: 250px;"></canvas>
+                    </div>
+                </div>
+                <!-- Field of Study Chart -->
+                <div class="col-lg-6">
+                    <div class="p-4 border rounded-3 bg-white h-100 shadow-sm" style="border-color: var(--border-color) !important;">
+                        <h6 class="fw-bold mb-3" style="color: var(--dark-navy); font-size: 1.05rem;">
+                            <i class="bi bi-pie-chart-fill text-warning me-2"></i>ဘုတ်အဖွဲ့ ထောက်ခံခံရသည့် ဘာသာရပ်များ (Field of Study)
+                        </h6>
+                        <canvas id="fieldChart" style="max-height: 250px;"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <!-- Exam Language Chart -->
+                <div class="col-md-6">
+                    <div class="p-4 border rounded-3 bg-white h-100 shadow-sm d-flex flex-column justify-content-between" style="border-color: var(--border-color) !important;">
+                        <div>
+                            <h6 class="fw-bold mb-3" style="color: var(--dark-navy); font-size: 1.05rem;">
+                                <i class="bi bi-translate text-success me-2"></i>ဖြေဆိုသည့် ဘာသာစကား ရာခိုင်နှုန်း (Language Track)
+                            </h6>
+                            <canvas id="langChart" style="max-height: 180px;"></canvas>
+                        </div>
+                        <div class="mt-4 p-3 rounded-2 small" style="background-color: #f8fafc; color: #334155; border-left: 3px solid #10b981;">
+                            <strong>💡 Key Takeaway:</strong> ဂျပန်စာ N2 မရှိသော်လည်း အဆင့်မြင့် အင်္ဂလိပ်စာစွမ်းရည် (English Track) ဖြင့် လျှောက်ထားသူ <strong>၉၄.၄%</strong> သည် အစောပိုင်းအဆင့်များကို အောင်မြင်စွာ ကျော်ဖြတ်နိုင်ခဲ့ပါသည်။
+                        </div>
+                    </div>
+                </div>
+                <!-- Gender Distribution -->
+                <div class="col-md-6">
+                    <div class="p-4 border rounded-3 bg-white h-100 shadow-sm d-flex flex-column justify-content-between" style="border-color: var(--border-color) !important;">
+                        <div>
+                            <h6 class="fw-bold mb-3" style="color: var(--dark-navy); font-size: 1.05rem;">
+                                <i class="bi bi-people-fill text-info me-2"></i>ကျား/မ အချိုးအစား (Gender Ratio at Final Stage)
+                            </h6>
+                            <canvas id="genderChart" style="max-height: 180px;"></canvas>
+                        </div>
+                        <div class="mt-4 p-3 rounded-2 small" style="background-color: #f8fafc; color: #334155; border-left: 3px solid #3b82f6;">
+                            <strong>💡 Key Takeaway:</strong> မူလ လျှောက်ထားသူများတွင် အမျိုးသမီး <strong>၇၂.၆%</strong> ရှိခဲ့ပြီး၊ နောက်ဆုံး သံရုံးအင်တာဗျူးအဆင့်တွင် အမျိုးသမီး <strong>၆၂.၅%</strong> နှင့် အမျိုးသား <strong>၃၇.၅%</strong> ပါဝင်လာပါသည်။
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ELEGANT STRATEGIC CALLOUT BOX -->
+            <div class="callout-box callout-gold mt-4" style="background-color: #fffbeb; border-left: 4px solid var(--accent-gold); padding: 20px; border-radius: 0 8px 8px 0;">
+                <h6 class="fw-bold" style="color: var(--dark-navy);"><i class="bi bi-lightbulb-fill text-warning me-2"></i>သုတေသန လျှောက်ထားသူများအတွက် စာရင်းအင်းပိုင်းဆိုင်ရာ အကြံပြုချက်</h6>
+                <p class="small mb-0 text-secondary" style="line-height: 1.8;">
+                    အစိုးရပညာသင်ဆု၏ အပြိုင်အဆိုင်အများဆုံး နယ်ပယ်များမှာ <strong>Engineering (၃၉.၅%)</strong> နှင့် <strong>Social Science (၂၇.၉%)</strong> တို့ ဖြစ်ကြပါသည်။ ပဏာမအဆင့် (၁၂၄) ဦးမှ နောက်ဆုံး သံရုံးအင်တာဗျူး (၃၂) ဦးအထိ ရောက်ရှိရန် လျှောက်ထားသူ (၄) ဦးလျှင် (၃) ဦးခန့် စိစစ်ဖြုတ်ချခံရလေ့ရှိသဖြင့် စာရွက်စာတမ်း တိကျမှုနှင့် အင်တာဗျူး ဖြေဆိုနိုင်စွမ်းသည် အလွန်အရေးကြီးပါသည်။
+                </p>
+            </div>
+        </section>
+    </main>
 
     <!-- 🌐 ELEGANT MINIMAL FOOTER -->
-<footer>
-    <div class="container">
-        <!-- PROJECT TITLE -->
-        <p class="mb-1 text-white serif-font" style="font-size: 1.3rem; letter-spacing: 2px;">MEXT SCHOLARSHIP ROADMAP</p>
-        <p class="small mb-3 text-secondary">A Legacy of Knowledge for Next-Generation Myanmar Scholars.</p>
+    <footer>
+        <div class="container">
+            <p class="mb-1 text-white serif-font" style="font-size: 1.3rem; letter-spacing: 2px;">MEXT SCHOLARSHIP ROADMAP</p>
+            <p class="small mb-3 text-secondary">A Legacy of Knowledge for Next-Generation Myanmar Scholars.</p>
 
-        <!-- 📜 MYANMAR LICENSE INFO -->
-        <div class="license-box">
-            <i class="bi bi-shield-check text-warning fs-5 d-block mb-1"></i>
-            <strong class="text-white d-block mb-1">ပညာရေးဆိုင်ရာ အခမဲ့ မျှဝေခွင့် လိုင်စင် (Open Educational Resource License)</strong>
-            ဤဝဘ်ဆိုက်ရှိ လမ်းညွှန်စာတမ်းများနှင့် မာတိကာများအားလုံးကို မျိုးဆက်သစ် မြန်မာကျောင်းသား/သူများ၏ ပညာရေးအလို့ငှာ အခမဲ့ လွတ်လပ်စွာ ဖတ်ရှုခြင်း၊ ကူးယူသိမ်းဆည်းခြင်းနှင့် မျှဝေအသုံးပြုခြင်းများကို ခွင့်ပြုထားပါသည်။ 
-            <span class="text-warning">(သတိပြုရန် - စီးပွားရေးဆန်ဆန် ရောင်းချခြင်း သို့မဟုတ် တစ်ကိုယ်ရေ ကိုယ်ကျိုးစီးပွားအတွက် မူပိုင်ခွင့်အလွဲသုံးစား ပြုလုပ်ခြင်းကို လုံးဝ ခွင့်မပြုပါ)။</span>
-        </div>
+            <!-- 📜 MYANMAR LICENSE INFO -->
+            <div class="license-box">
+                <i class="bi bi-shield-check text-warning fs-5 d-block mb-1"></i>
+                <strong class="text-white d-block mb-1">ပညာရေးဆိုင်ရာ အခမဲ့ မျှဝေခွင့် လိုင်စင် (Open Educational Resource License)</strong>
+                ဤဝဘ်ဆိုက်ရှိ လမ်းညွှန်စာတမ်းများနှင့် မာတိကာများအားလုံးကို မျိုးဆက်သစ် မြန်မာကျောင်းသား/သူများ၏ ပညာရေးအလို့ငှာ အခမဲ့ လွတ်လပ်စွာ ဖတ်ရှုခြင်း၊ ကူးယူသိမ်းဆည်းခြင်းနှင့် မျှဝေအသုံးပြုခြင်းများကို ခွင့်ပြုထားပါသည်။ 
+                <span class="text-warning">(သတိပြုရန် - စီးပွားရေးဆန်ဆန် ရောင်းချခြင်း သို့မဟုတ် တစ်ကိုယ်ရေ ကိုယ်ကျိုးစီးပွားအတွက် မူပိုင်ခွင့်အလွဲသုံးစား ပြုလုပ်ခြင်းကို လုံးဝ ခွင့်မပြုပါ)။</span>
+            </div>
 
-        <!-- 👀 LIVE VISITOR COUNTER BADGE -->
-        <div class="mb-4">
-           <div class="visitor-stats">
+            <!-- 👀 LIVE VISITOR COUNTER BADGE -->
+            <div class="visitor-stats">
                 <span><i class="bi bi-eye-fill text-info me-1"></i> စုစုပေါင်း ဝင်ရောက်ဖတ်ရှုသူ -</span>
-                <img src="https://api.visitorbadge.io/api/visitors?path=robinglory.myanmar-mext-2027-roadmap&label=VIEWS&labelColor=%230f172a&countColor=%233b82f6" alt="Visitor Count" style="vertical-align: middle;">
+                <img src="https://komarev.com/ghpvc/?username=robinglory-myanmar-mext-2027-roadmap&label=VIEWS&color=3b82f6&style=flat" alt="Visitor Count" style="vertical-align: middle;">
+            </div>
+
+            <!-- COPYRIGHT & AUTHOR -->
+            <div class="border-top border-secondary pt-3 mt-3" style="opacity: 0.6; font-size: 0.8rem;">
+                © 2026 Designed & Maintained by <a href="https://github.com/robinglory" target="_blank" class="text-light text-decoration-none fw-bold">Yan Naing Kyaw Tint</a>. All Rights Reserved.
             </div>
         </div>
+    </footer>
 
-        <!-- COPYRIGHT & AUTHOR -->
-        <div class="border-top border-secondary pt-3 mt-3" style="opacity: 0.6; font-size: 0.8rem;">
-            © 2026 Designed & Maintained by <a href="https://github.com/robinglory" target="_blank" class="text-light text-decoration-none fw-bold">Yan Naing Kyaw Tint</a>. All Rights Reserved.
-        </div>
-    </div>
-</footer>
-
-<!-- 👁️ MARKDOWN VIEWER MODAL (Popup Reading Window) -->
+    <!-- 👁️ MARKDOWN VIEWER MODAL (Popup Reading Window) -->
     <div class="modal fade" id="markdownModal" tabindex="-1" aria-labelledby="mdModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-scrollable">
             <div class="modal-content" style="border-radius: 16px; border: none; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
@@ -597,7 +390,6 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4 p-md-5">
-                    <!-- Markdown Content Will Load Here -->
                     <div id="mdModalBody" class="markdown-body"></div>
                 </div>
                 <div class="modal-footer bg-light" style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px; padding: 15px 30px;">
@@ -608,53 +400,17 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap & Chart.js JS CDNs -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- 🚀 CUSTOM JS LINK -->
+    <script src="script.js"></script>
 
-    <!-- 🚀 MARKDOWN FETCH & RENDER SCRIPT -->
-    <script>
-        async function viewMarkdown(filename, title) {
-            // Modal ခေါင်းစဉ် ပြောင်းခြင်း
-            document.getElementById('mdModalTitle').innerHTML = `<i class="bi bi-file-earmark-text me-2"></i>${title}`;
-            // Loading ပြထားခြင်း
-            document.getElementById('mdModalBody').innerHTML = `
-                <div class="text-center my-5 py-5">
-                    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
-                    <p class="mt-3 text-muted fw-bold">စာတမ်းအချက်အလက်များကို ခေါ်ယူပြင်ဆင်နေပါသည်...</p>
-                </div>`;
-            
-            // Modal ကို ဖွင့်ခြင်း
-            var mdModal = new bootstrap.Modal(document.getElementById('markdownModal'));
-            mdModal.show();
-
-            try {
-                // ဖိုင်ကို လှမ်းခေါ်ခြင်း (Fetch)
-                const response = await fetch(filename);
-                if (!response.ok) throw new Error('ဖိုင်ရှာမတွေ့ပါ သို့မဟုတ် လမ်းကြောင်းမှားယွင်းနေပါသည်။');
-                const text = await response.text();
-                
-                // Marked.js ဖြင့် HTML အဖြစ် ပြောင်းလဲ၍ ထည့်သွင်းခြင်း
-                document.getElementById('mdModalBody').innerHTML = marked.parse(text);
-            } catch (error) {
-                // Local testing တွင် CORS error တက်ပါက ရှင်းပြပေးမည့် Message
-                document.getElementById('mdModalBody').innerHTML = `
-                    <div class="alert alert-danger p-4 rounded-3">
-                        <h6 class="fw-bold"><i class="bi bi-exclamation-triangle-fill me-2"></i>စာတမ်း ဖွင့်ရှု၍ မရပါ</h6>
-                        <p class="mb-2"><strong>Error:</strong> ${error.message}</p>
-                        <hr>
-                        <p class="small mb-0">
-                            <strong>💡 သတိပြုရန် (For Local Testing):</strong> သင်သည် ယခု Web ကို ကွန်ပျူတာပေါ်တွင် <code>file:///...</code> ဖြင့် တိုက်ရိုက်ဖွင့်ထားပါက Browser ၏ လုံခြုံရေးစည်းကမ်း (CORS Policy) ကြောင့် ဖိုင်များကို Fetch လုပ်ခွင့် မပြုခြင်း ဖြစ်နိုင်ပါသည်။ 
-                            <br><br>
-                            - <strong>VS Code Live Server</strong> Extension ကိုသုံး၍ ဖွင့်ကြည့်ပါ၊ (သို့မဟုတ်)
-                            - <strong>GitHub Pages</strong> သို့ Upload တင်လိုက်ပါက 100% အပြည့်အဝ အလုပ်လုပ်ပါမည်။
-                        </p>
-                    </div>`;
-            }
-        }
-    </script>
-
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Dark/Light Theme">
+        <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+    </button>
 </body>
 </html>
