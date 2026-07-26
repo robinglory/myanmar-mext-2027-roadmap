@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEXT 2027 Complete Roadmap & Guidelines Portal</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Marked.js for Markdown Parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --accent-gold: #d4af37;
+            --dark-navy: #0f172a;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Noto Sans Myanmar', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* 🌟 ELEGANT BILATERAL HERO SECTION (MYANMAR + JAPAN FUSION) */
+        .hero-section {
+            position: relative;
+            height: 78vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            /* မြန်မာ့ရွှေရောင် ပုဂံအမွေအနှစ်နှင့် ဂျပန် Zen အငွေ့အသက် ပေါင်းစပ်ထားသော နောက်ခံ */
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1662657080109-d531980fd806?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+            border-bottom: 3px solid var(--accent-gold);
+            padding: 0 20px;
+            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .hero-tag {
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: #e2e8f0;
+            max-width: 700px;
+            margin: 0 auto 35px auto;
+        }
+
+        .btn-elegant {
+            background-color: transparent;
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-elegant:hover {
+            background-color: var(--accent-gold);
+            color: var(--dark-navy);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* 📚 DOCUMENT REPOSITORY CARDS (THE 7 FILES) */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+            font-size: 1.05rem;
+        }
+
+        /* Featured Master Roadmap Card */
+        .master-card {
+            background: linear-gradient(145deg, #0f172a, #1e293b);
+            color: white;
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid #334155;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .master-card::after {
+            content: '★ MASTER FILE';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--accent-gold);
+            color: var(--dark-navy);
+            font-weight: 700;
+            font-size: 0.7rem;
+            padding: 5px 35px;
+            transform: rotate(45deg);
+        }
+    /* 🌟 AUTHOR BADGE IN HERO SECTION */
+    .author-pill {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 6px 18px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        color: #e2e8f0;
+        margin-bottom: 30px;
+        backdrop-filter: blur(5px);
+    }
+
+    .github-btn {
+        color: var(--accent-gold);
+        text-decoration: none;
+        font-weight: 600;
+        margin-left: 8px;
+        transition: color 0.2s;
+    }
+
+    .github-btn:hover {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+    /* 📖 RENDERED MARKDOWN MODAL STYLING */
+    .markdown-body {
+        font-family: 'Noto Sans Myanmar', sans-serif;
+        color: #1e293b;
+        line-height: 1.9;
+        padding: 15px;
+    }
+    .markdown-body h1, .markdown-body h2, .markdown-body h3 {
+        font-family: 'Playfair Display', serif;
+        color: #0f172a;
+        font-weight: 700;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+        border-bottom: 2px solid #f1f5f9;
+        padding-bottom: 8px;
+    }
+    .markdown-body table {
+        width: 100%;
+        margin: 20px 0;
+        border-collapse: collapse;
+    }
+    .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 12px;
+        text-align: left;
+    }
+    .markdown-body th {
+        background-color: #f8fafc;
+        color: #0f172a;
+        font-weight: 600;
+    }
+    .markdown-body blockquote {
+        border-left: 4px solid var(--accent-gold);
+        background-color: #fffbeb;
+        padding: 15px 20px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+        color: #334155;
+    }
+    .markdown-body code {
+        background-color: #f1f5f9;
+        color: #e11d48;
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 0.9em;
+    }
+
+    /* 🌐 FOOTER & LICENSE SECTION */
+    .license-box {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 20px;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+        font-size: 0.85rem;
+        color: #cbd5e1;
+        line-height: 1.7;
+    }
+
+    .visitor-stats {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 8px 16px;
+        border-radius: 8px;
+        border: 1px solid #334155;
+        font-size: 0.85rem;
+        color: #94a3b8;
+    }
+        /* Regular Step Cards */
+        .doc-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+            border-color: #cbd5e1;
+        }
+
+        .doc-icon {
+            font-size: 2rem;
+            color: #3b82f6;
+            margin-bottom: 15px;
+        }
+
+        .step-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #64748b;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .doc-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+        }
+
+        .doc-desc {
+            color: #475569;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .file-badge {
+            background-color: #f1f5f9;
+            color: #475569;
+            font-family: monospace;
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Button groups */
+        .btn-group-custom {
+            display: flex;
+            gap: 10px;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 15px;
+        }
+
+        .btn-custom-outline {
+            border: 1px solid #cbd5e1;
+            color: var(--dark-navy);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            flex: 1;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .btn-custom-outline:hover {
+            background-color: #f8fafc;
+            border-color: #94a3b8;
+            color: var(--dark-navy);
+        }
+
+        .btn-custom-primary {
+            background-color: var(--dark-navy);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            flex: 1;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .btn-custom-primary:hover {
+            background-color: #1e293b;
+            color: var(--accent-gold);
+        }
+
+        footer {
+            background-color: var(--dark-navy);
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 80px;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .btn-group-custom { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🌟 ELEGANT MINIMALIST HERO SECTION -->
+    <header class="hero-section">
+        <div>
+            <!-- 🇲🇲 🤝 🇯🇵 BILATERAL EMBLEM TAG -->
+            <div class="hero-tag d-flex align-items-center justify-content-center gap-2">
+                <span style="font-size: 1.2rem;">🇲🇲</span> 
+                <span>MYANMAR ── JAPAN SCHOLARSHIP BRIDGE</span> 
+                <span style="font-size: 1.2rem;">🇯🇵</span>
+            </div>
+
+            <h1 class="hero-title">MEXT RESEARCH 2027</h1>
+            <p class="hero-subtitle">
+                မြန်မာ-ဂျပန် ပညာရေးတံတားတစ်စင်းအဖြစ် မျိုးဆက်သစ် ကျောင်းသားများအတွက် ကိုယ်တွေ့အတွေ့အကြုံများနှင့် တရားဝင်စည်းမျဉ်းများအပေါ် အခြေခံထားသော လမ်းညွှန်စာတမ်း (၇) စောင်
+            </p>
+            
+            <!-- 👨‍💻 AUTHOR INTRO & GITHUB LINK -->
+            <div class="author-pill">
+                <span><i class="bi bi-person-circle me-1"></i> Curated by <strong>Yan Naing Kyaw Tint (GLORY)</strong></span>
+                <span class="mx-2">|</span>
+                <a href="https://github.com/robinglory" target="_blank" class="github-btn">
+                    <i class="bi bi-github"></i> robinglory ↗
+                </a>
+            </div>
+            <br>
+
+            <!-- CTA BUTTON -->
+            <a href="#repository" class="btn-elegant"><i class="bi bi-folder2-open me-2"></i>လမ်းညွှန်စာတမ်းများ ရယူရန်</a>
+        </div>
+    </header>
+
+<main class="container my-5 pt-4" id="repository">
+        <div class="section-title">
+            <h2>MEXT Golden Guidelines Repository</h2>
+            <p>အလွယ်တကူ ဖတ်ရှုနိုင်ရန်နှင့် ဒေါင်းလုဒ်ဆွဲယူနိုင်ရန် စနစ်တကျ ခွဲခြားပေးထားသော မူရင်း Markdown (.md) ဖိုင်များ</p>
+        </div>
+
+        <!-- 🌟 FILE 1: MASTER ROADMAP (Featured) -->
+        <div class="master-card">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <span class="text-warning small fw-bold tracking-wider d-block mb-1">👑 THE OVERVIEW DOCUMENT</span>
+                    <h3 class="text-white mb-2" style="font-family: 'Noto Sans Myanmar', sans-serif; font-weight: 700;">
+                        MEXT Scholarship 2027: အဆင့်မြင့် လမ်းပြမြေပုံ (Step 0 မှ Step 5 အထိ)
+                    </h3>
+                    <p class="text-light mb-3" style="opacity: 0.85; font-size: 0.95rem;">
+                        ပညာသင်ဆု လျှောက်လွှာစတင် တင်သွင်းသည်မှ နောက်ဆုံးအဆင့် သံရုံးလူတွေ့အင်တာဗျူးကြီး အောင်မြင်သည်အထိ အဆင့်ဆင့် ကျော်ဖြတ်ရမည့် အခြေခံစည်းမျဉ်းများနှင့် ကိုယ်တွေ့ဗျူဟာများ အပြည့်အစုံ ပါဝင်သော ပင်မလမ်းညွှန်စာတမ်းကြီး ဖြစ်ပါသည်။
+                    </p>
+                    <div class="file-badge bg-dark text-warning border-secondary">
+                        <i class="bi bi-file-code me-1"></i> mext-2027-complete-roadmap-v2.md
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <a href="mext-2027-complete-roadmap-v2.md" download class="btn btn-warning fw-bold px-4 py-2 me-2 mb-2" style="border-radius: 50px;">
+                        <i class="bi bi-download me-2"></i>Download .MD
+                    </a>
+                    <button onclick="viewMarkdown('mext-2027-complete-roadmap-v2.md', 'MEXT Scholarship 2027: အဆင့်မြင့် လမ်းပြမြေပုံ')" class="btn btn-outline-light fw-bold px-4 py-2 mb-2" style="border-radius: 50px;">
+                        <i class="bi bi-eye me-2"></i>Read Online
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 📄 FILES 2 TO 7: THE STEP-BY-STEP GUIDELINES (Grid Layout) -->
+        <div class="row g-4">
+            
+            <!-- Step 0 Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="doc-card">
+                    <div>
+                        <div class="doc-icon"><i class="bi bi-lightbulb-fill text-warning"></i></div>
+                        <span class="step-tag">Step 0 Guideline</span>
+                        <h4 class="doc-title">သုတေသနအဆိုပြုလွှာ ပြင်ဆင်ခြင်း</h4>
+                        <p class="doc-desc">
+                            A+ Grade Proposal တည်ဆောက်နည်း၊ HRI သုတေသနစာတမ်း ကိုးကားပုံ၊ Gantt Chart အချိန်ဇယားဆွဲနည်းနှင့် နှစ်နိုင်ငံအကျိုးပြုမှု (Bilateral Impact) ရေးသားနည်းများ။
+                        </p>
+                    </div>
+                    <div>
+                        <div class="file-badge"><i class="bi bi-file-code me-1"></i> mext-step0-proposal-guideline.md</div>
+                        <div class="btn-group-custom">
+                            <button onclick="viewMarkdown('mext-step0-proposal-guideline.md', 'Step 0: သုတေသနအဆိုပြုလွှာ ပြင်ဆင်ခြင်း')" class="btn-custom-outline"><i class="bi bi-eye me-1"></i> Read</button>
+                            <a href="mext-step0-proposal-guideline.md" download class="btn-custom-primary"><i class="bi bi-download me-1"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 1 Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="doc-card">
+                    <div>
+                        <div class="doc-icon"><i class="bi bi-file-earmark-check-fill text-primary"></i></div>
+                        <span class="step-tag">Step 1 Guideline</span>
+                        <h4 class="doc-title">လျှောက်လွှာ တင်သွင်းခြင်း လမ်းညွှန်</h4>
+                        <p class="doc-desc">
+                            MAJA Hard Copy ပေးပို့နည်း၊ သံရုံး ဒစ်ဂျစ်တယ် တင်သွင်းမှု (10MB Limit)၊ ပညာအရည်အချင်းဇယား ဖြည့်ပုံနှင့် စာရွက်စာတမ်း ① မှ ⑪ နံပါတ်တပ်ခြင်း စည်းမျဉ်းများ။
+                        </p>
+                    </div>
+                    <div>
+                        <div class="file-badge"><i class="bi bi-file-code me-1"></i> mext-step1-application-guideline.md</div>
+                        <div class="btn-group-custom">
+                            <button onclick="viewMarkdown('mext-step1-application-guideline.md', 'Step 1: လျှောက်လွှာ တင်သွင်းခြင်း လမ်းညွှန်')" class="btn-custom-outline"><i class="bi bi-eye me-1"></i> Read</button>
+                            <a href="mext-step1-application-guideline.md" download class="btn-custom-primary"><i class="bi bi-download me-1"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="doc-card">
+                    <div>
+                        <div class="doc-icon"><i class="bi bi-pencil-square text-success"></i></div>
+                        <span class="step-tag">Step 2 Guideline</span>
+                        <h4 class="doc-title">MAJA ရေးဖြေစာမေးပွဲ လမ်းညွှန်</h4>
+                        <p class="doc-desc">
+                            English & Japanese မေးခွန်းဟောင်း ခွဲခြမ်းစိတ်ဖြာချက်၊ Online Device (၂) ခု ကင်မရာ ချိန်ညှိမှုနှင့် "စာရွက်အလွတ် လုံးဝမချန်ရ" သော ရွှေစည်းကမ်း။
+                        </p>
+                    </div>
+                    <div>
+                        <div class="file-badge"><i class="bi bi-file-code me-1"></i> mext-step2-maja-written-guideline.md</div>
+                        <div class="btn-group-custom">
+                            <button onclick="viewMarkdown('mext-step2-maja-written-guideline.md', 'Step 2: MAJA ရေးဖြေစာမေးပွဲ လမ်းညွှန်')" class="btn-custom-outline"><i class="bi bi-eye me-1"></i> Read</button>
+                            <a href="mext-step2-maja-written-guideline.md" download class="btn-custom-primary"><i class="bi bi-download me-1"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="doc-card">
+                    <div>
+                        <div class="doc-icon"><i class="bi bi-people-fill text-info"></i></div>
+                        <span class="step-tag">Step 3 Guideline</span>
+                        <h4 class="doc-title">MAJA ပဏာမအင်တာဗျူး လမ်းညွှန်</h4>
+                        <p class="doc-desc">
+                            အမေးအများဆုံး မေးခွန်း (၅) ခု၊ နည်းပညာပိုင်းဆိုင်ရာ ထိုးနှက်ချက်များကို ဖြေရှင်းမည့် "Ma Phoo Defense (Humility Pivot)" ဗျူဟာနှင့် Zoom လောကဝတ်များ။
+                        </p>
+                    </div>
+                    <div>
+                        <div class="file-badge"><i class="bi bi-file-code me-1"></i> mext-step3-maja-interview-guideline.md</div>
+                        <div class="btn-group-custom">
+                            <button onclick="viewMarkdown('mext-step3-maja-interview-guideline.md', 'Step 3: MAJA ပဏာမအင်တာဗျူး လမ်းညွှန်')" class="btn-custom-outline"><i class="bi bi-eye me-1"></i> Read</button>
+                            <a href="mext-step3-maja-interview-guideline.md" download class="btn-custom-primary"><i class="bi bi-download me-1"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="doc-card">
+                    <div>
+                        <div class="doc-icon"><i class="bi bi-building-fill-check text-danger"></i></div>
+                        <span class="step-tag">Step 4 Guideline</span>
+                        <h4 class="doc-title">သံရုံးအဆင့် ရေးဖြေစာမေးပွဲ</h4>
+                        <p class="doc-desc">
+                            ရန်ကုန် MAJA Center တွင် လူကိုယ်တိုင် ဖြေဆိုရသော အချိန်ဇယား၊ Advanced English Spelling Practice နှင့် ကန်ဂျီ/ဝိဘတ် သဒ္ဒါ လေ့ကျင့်ရေး မြေပုံ။
+                        </p>
+                    </div>
+                    <div>
+                        <div class="file-badge"><i class="bi bi-file-code me-1"></i> mext-step4-embassy-written-guideline.md</div>
+                        <div class="btn-group-custom">
+                            <button onclick="viewMarkdown('mext-step4-embassy-written-guideline.md', 'Step 4: သံရုံးအဆင့် ရေးဖြေစာမေးပွဲ')" class="btn-custom-outline"><i class="bi bi-eye me-1"></i> Read</button>
+                            <a href="mext-step4-embassy-written-guideline.md" download class="btn-custom-primary"><i class="bi bi-download me-1"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="doc-card">
+                    <div>
+                        <div class="doc-icon"><i class="bi bi-trophy-fill text-warning"></i></div>
+                        <span class="step-tag">Step 5 Guideline</span>
+                        <h4 class="doc-title">သံရုံး နောက်ဆုံးအဆင့် အင်တာဗျူးကြီး</h4>
+                        <p class="doc-desc">
+                            Vibe Check စစ်ဆေးမှု၊ Wizard-of-Oz vs Autonomous ခြေပနည်း၊ အခက်ခဲဆုံး မေးခွန်း (၁၀) ခုနှင့် အောင်မြင်ပြီးနောက် LOA တောင်းခံခြင်း (AAD စနစ်) လမ်းညွှန်။
+                        </p>
+                    </div>
+                    <div>
+                        <div class="file-badge"><i class="bi bi-file-code me-1"></i> mext-step5-embassy-interview-guideline.md</div>
+                        <div class="btn-group-custom">
+                            <button onclick="viewMarkdown('mext-step5-embassy-interview-guideline.md', 'Step 5: သံရုံး နောက်ဆုံးအဆင့် အင်တာဗျူးကြီး')" class="btn-custom-outline"><i class="bi bi-eye me-1"></i> Read</button>
+                            <a href="mext-step5-embassy-interview-guideline.md" download class="btn-custom-primary"><i class="bi bi-download me-1"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</main>
+
+    <!-- 🌐 ELEGANT MINIMAL FOOTER -->
+<footer>
+    <div class="container">
+        <!-- PROJECT TITLE -->
+        <p class="mb-1 text-white serif-font" style="font-size: 1.3rem; letter-spacing: 2px;">MEXT SCHOLARSHIP ROADMAP</p>
+        <p class="small mb-3 text-secondary">A Legacy of Knowledge for Next-Generation Myanmar Scholars.</p>
+
+        <!-- 📜 MYANMAR LICENSE INFO -->
+        <div class="license-box">
+            <i class="bi bi-shield-check text-warning fs-5 d-block mb-1"></i>
+            <strong class="text-white d-block mb-1">ပညာရေးဆိုင်ရာ အခမဲ့ မျှဝေခွင့် လိုင်စင် (Open Educational Resource License)</strong>
+            ဤဝဘ်ဆိုက်ရှိ လမ်းညွှန်စာတမ်းများနှင့် မာတိကာများအားလုံးကို မျိုးဆက်သစ် မြန်မာကျောင်းသား/သူများ၏ ပညာရေးအလို့ငှာ အခမဲ့ လွတ်လပ်စွာ ဖတ်ရှုခြင်း၊ ကူးယူသိမ်းဆည်းခြင်းနှင့် မျှဝေအသုံးပြုခြင်းများကို ခွင့်ပြုထားပါသည်။ 
+            <span class="text-warning">(သတိပြုရန် - စီးပွားရေးဆန်ဆန် ရောင်းချခြင်း သို့မဟုတ် တစ်ကိုယ်ရေ ကိုယ်ကျိုးစီးပွားအတွက် မူပိုင်ခွင့်အလွဲသုံးစား ပြုလုပ်ခြင်းကို လုံးဝ ခွင့်မပြုပါ)။</span>
+        </div>
+
+        <!-- 👀 LIVE VISITOR COUNTER BADGE -->
+        <div class="mb-4">
+            <div class="visitor-stats">
+                <span><i class="bi bi-eye-fill text-info me-1"></i> စုစုပေါင်း ဝင်ရောက်ဖတ်ရှုသူ -</span>
+                <!-- Visitor Badge API (GitHub repository name ကို ပြောင်းသုံးရုံပါပဲ) -->
+                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Frobinglory.github.io%2Fmext-roadmap&count_bg=%2F%2F3B82F6&title_bg=%2F%2F0F172A&icon=github.svg&icon_color=%2F%2FE7E7E7&title=Views&edge_flat=true" alt="Visitor Count">
+            </div>
+        </div>
+
+        <!-- COPYRIGHT & AUTHOR -->
+        <div class="border-top border-secondary pt-3 mt-3" style="opacity: 0.6; font-size: 0.8rem;">
+            © 2026 Designed & Maintained by <a href="https://github.com/robinglory" target="_blank" class="text-light text-decoration-none fw-bold">Yan Naing Kyaw Tint</a>. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- 👁️ MARKDOWN VIEWER MODAL (Popup Reading Window) -->
+    <div class="modal fade" id="markdownModal" tabindex="-1" aria-labelledby="mdModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content" style="border-radius: 16px; border: none; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+                <div class="modal-header bg-dark text-white" style="border-top-left-radius: 16px; border-top-right-radius: 16px; padding: 20px 30px;">
+                    <h5 class="modal-title serif-font text-warning" id="mdModalTitle"><i class="bi bi-book-half me-2"></i>MEXT Guideline Document</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5">
+                    <!-- Markdown Content Will Load Here -->
+                    <div id="mdModalBody" class="markdown-body"></div>
+                </div>
+                <div class="modal-footer bg-light" style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px; padding: 15px 30px;">
+                    <span class="text-muted small me-auto"><i class="bi bi-info-circle me-1"></i> ဤစာတမ်းအား မူရင်း .md ဖိုင်မှ တိုက်ရိုက် ရယူဖော်ပြထားခြင်း ဖြစ်ပါသည်။</span>
+                    <button type="button" class="btn btn-dark rounded-pill px-4" data-bs-dismiss="modal">ပိတ်မည် (Close)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 🚀 MARKDOWN FETCH & RENDER SCRIPT -->
+    <script>
+        async function viewMarkdown(filename, title) {
+            // Modal ခေါင်းစဉ် ပြောင်းခြင်း
+            document.getElementById('mdModalTitle').innerHTML = `<i class="bi bi-file-earmark-text me-2"></i>${title}`;
+            // Loading ပြထားခြင်း
+            document.getElementById('mdModalBody').innerHTML = `
+                <div class="text-center my-5 py-5">
+                    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
+                    <p class="mt-3 text-muted fw-bold">စာတမ်းအချက်အလက်များကို ခေါ်ယူပြင်ဆင်နေပါသည်...</p>
+                </div>`;
+            
+            // Modal ကို ဖွင့်ခြင်း
+            var mdModal = new bootstrap.Modal(document.getElementById('markdownModal'));
+            mdModal.show();
+
+            try {
+                // ဖိုင်ကို လှမ်းခေါ်ခြင်း (Fetch)
+                const response = await fetch(filename);
+                if (!response.ok) throw new Error('ဖိုင်ရှာမတွေ့ပါ သို့မဟုတ် လမ်းကြောင်းမှားယွင်းနေပါသည်။');
+                const text = await response.text();
+                
+                // Marked.js ဖြင့် HTML အဖြစ် ပြောင်းလဲ၍ ထည့်သွင်းခြင်း
+                document.getElementById('mdModalBody').innerHTML = marked.parse(text);
+            } catch (error) {
+                // Local testing တွင် CORS error တက်ပါက ရှင်းပြပေးမည့် Message
+                document.getElementById('mdModalBody').innerHTML = `
+                    <div class="alert alert-danger p-4 rounded-3">
+                        <h6 class="fw-bold"><i class="bi bi-exclamation-triangle-fill me-2"></i>စာတမ်း ဖွင့်ရှု၍ မရပါ</h6>
+                        <p class="mb-2"><strong>Error:</strong> ${error.message}</p>
+                        <hr>
+                        <p class="small mb-0">
+                            <strong>💡 သတိပြုရန် (For Local Testing):</strong> သင်သည် ယခု Web ကို ကွန်ပျူတာပေါ်တွင် <code>file:///...</code> ဖြင့် တိုက်ရိုက်ဖွင့်ထားပါက Browser ၏ လုံခြုံရေးစည်းကမ်း (CORS Policy) ကြောင့် ဖိုင်များကို Fetch လုပ်ခွင့် မပြုခြင်း ဖြစ်နိုင်ပါသည်။ 
+                            <br><br>
+                            - <strong>VS Code Live Server</strong> Extension ကိုသုံး၍ ဖွင့်ကြည့်ပါ၊ (သို့မဟုတ်)
+                            - <strong>GitHub Pages</strong> သို့ Upload တင်လိုက်ပါက 100% အပြည့်အဝ အလုပ်လုပ်ပါမည်။
+                        </p>
+                    </div>`;
+            }
+        }
+    </script>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
