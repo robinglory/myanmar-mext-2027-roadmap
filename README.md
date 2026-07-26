@@ -34,7 +34,7 @@ Repository အတွင်းတွင် အောက်ပါ မူရင်�
 ---
 
 ## 🚀 မည်သို့ အသုံးပြုရမည်နည်း (How to Use)
-* **🌐 Web Portal မှတစ်ဆင့် ဖတ်ရှုရန် -** အပေါ်ရှိ Live Website လင့်ခ် (သို့မဟုတ်) [ဤနေရာကို နှိပ်၍](https://robinglory.github.io/mext-2027-roadmap/) Web Portal သို့ ဝင်ရောက်ကာ Document Reader ဖြင့် တိုက်ရိုက် အလွယ်တကူ ဖတ်ရှုလေ့လာနိုင်ပါသည်။
+* **🌐 Web Portal မှတစ်ဆင့် ဖတ်ရှုရန် -** အပေါ်ရှိ Live Website လင့်ခ် (သို့မဟုတ်) [ဤနေရာကို နှိပ်၍](https://robinglory.github.io/myanmar-mext-2027-roadmap/) Web Portal သို့ ဝင်ရောက်ကာ Document Reader ဖြင့် တိုက်ရိုက် အလွယ်တကူ ဖတ်ရှုလေ့လာနိုင်ပါသည်။
 * **📥 အော့ဖ်လိုင်း (Offline) ဖတ်ရှုရန် -** မိမိလေ့လာလိုသော `.md` ဖိုင်များကို Download ရယူ၍ မည်သည့် Code Editor သို့မဟုတ် Notepad ဖြင့်မဆို ဖွင့်ရောက်ဖတ်ရှုနိုင်ပါသည်။
 
 ---
