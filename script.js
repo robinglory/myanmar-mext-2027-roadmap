@@ -103,21 +103,37 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // 4. Gender Chart (Pie - Slate vs Blue)
+    // 4. Gender Chart (Grouped Bar Chart: Initial 124 vs Final 32)
     new Chart(document.getElementById('genderChart'), {
-        type: 'pie',
+        type: 'bar',
         data: {
-            labels: ['Female (62.5%)', 'Male (37.5%)'],
-            datasets: [{
-                data: [20, 12],
-                backgroundColor: ['#3b82f6', '#64748b'],
-                borderWidth: 0,
-                hoverOffset: 4
-            }]
+            labels: ['Stage 1: မူလ (၁၂၄ ဦး)', 'Stage 4: အင်တာဗျူး (၃၂ ဦး)'],
+            datasets: [
+                {
+                    label: 'Female (အမျိုးသမီး)',
+                    data: [90, 20], // ၉၀ ဦး မှ ၂၀ ဦး[cite: 8, 9, 11]
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 4,
+                    barThickness: 25
+                },
+                {
+                    label: 'Male (အမျိုးသား)',
+                    data: [34, 12], // ၃၄ ဦး မှ ၁၂ ဦး[cite: 8, 9, 11]
+                    backgroundColor: '#0f172a',
+                    borderRadius: 4,
+                    barThickness: 25
+                }
+            ]
         },
         options: { 
             responsive: true, 
-            plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } } 
+            plugins: { 
+                legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } 
+            },
+            scales: { 
+                y: { beginAtZero: true, grid: { color: '#f1f5f9' } },
+                x: { grid: { display: false } }
+            } 
         }
     });
 });
