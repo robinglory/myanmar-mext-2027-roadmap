@@ -46,22 +46,22 @@ MAJA ရေးဖြေစာမေးပွဲတွင် **English Language**
 
 ### ၂။ Idioms, Phrases & Word Substitutions (အသုံးအနှုန်းများနှင့် စကားလုံးအစားထိုးခြင်း)
 *   **Idioms & Phrases:** အင်္ဂလိပ်စာ အဆင့်မြင့်အသုံးအနှုန်းများ၏ တကယ့်အဓိပ္ပာယ်ရင်းမြစ်ကို စစ်ဆေးခြင်း ဖြစ်ပါတယ်။
-    *   `To put one’s hand to plough` $\rightarrow$ **To take a difficult task**
-    *   `To play second fiddle` $\rightarrow$ **To support the role and view of another person / To reduce importance of one's senior**
+    *   `To put one’s hand to plough` → **To take a difficult task**
+    *   `To play second fiddle` → **To support the role and view of another person / To reduce importance of one's senior**
 *   **Word Substitution (စကားလုံးတစ်လုံးတည်းဖြင့် အစားထိုးခြင်း):**
-    *   `One who has good taste for food` $\rightarrow$ **Gourmet** 
-    *   `A disease that spread over a large area` $\rightarrow$ **Epidemic** 
+    *   `One who has good taste for food` → **Gourmet** 
+    *   `A disease that spread over a large area` → **Epidemic** 
 
 ### ٣။ Synonyms & Antonyms (တူညီသောအဓိပ္ပာယ်နှင့် ဆန့်ကျင်ဘက်စကားလုံးများ)
 *   **Synonyms (အဓိပ္ပာယ်တူ):**
-    *   `The story is too fantastic to be credible.` $\rightarrow$ *Credible* ၏ အဓိပ္ပာယ်တူမှာ **Believable** ဖြစ်ပါတယ်။
+    *   `The story is too fantastic to be credible.` → *Credible* ၏ အဓိပ္ပာယ်တူမှာ **Believable** ဖြစ်ပါတယ်။
 *   **Antonyms (ဆန့်ကျင်ဘက်):**
-    *   `Development` $\rightarrow$ **Regression / Decay / Decline** (ဆန့်ကျင်ဘက်စကားလုံးကို ရှာဖွေရန်)။
+    *   `Development` → **Regression / Decay / Decline** (ဆန့်ကျင်ဘက်စကားလုံးကို ရှာဖွေရန်)။
 
 ### ၄။ Verbal Analogies (ဆက်စပ်တွေးခေါ်မှု မေးခွန်းများ)
 စကားလုံးနှစ်လုံးအကြား ဆက်စပ်မှုကို နားလည်ပြီး အလားတူ ဆက်စပ်မှုရှိသော စကားလုံးအတွဲကို ရွေးချယ်ရခြင်း ဖြစ်ပါတယ်။
-*   `DIVA : OPERA` $\rightarrow$ **thespian : play** (Diva သည် Opera တွင် သရုပ်ဆောင်သူဖြစ်ပြီး၊ Thespian သည် Play (ပြဇာတ်) တွင် သရုပ်ဆောင်သူ ဖြစ်ပါတယ်)။
-*   `PAIN : SEDATIVE` $\rightarrow$ **grief : consolation** (Sedative (အကိုက်အခဲပျောက်ဆေး) သည် Pain (နာကျင်မှု) ကို သက်သာစေပြီး၊ Consolation (နှစ်သိမ့်မှု) သည် Grief (ပူဆွေးမှု) ကို သက်သာစေပါတယ်)။
+*   `DIVA : OPERA` → **thespian : play** (Diva သည် Opera တွင် သရုပ်ဆောင်သူဖြစ်ပြီး၊ Thespian သည် Play (ပြဇာတ်) တွင် သရုပ်ဆောင်သူ ဖြစ်ပါတယ်)။
+*   `PAIN : SEDATIVE` → **grief : consolation** (Sedative (အကိုက်အခဲပျောက်ဆေး) သည် Pain (နာကျင်မှု) ကို သက်သာစေပြီး၊ Consolation (နှစ်သိမ့်မှု) သည် Grief (ပူဆွေးမှု) ကို သက်သာစေပါတယ်)။
 
 ### ၅။ Essay Writing (စာစီစာကုံး ရေးသားခြင်း - အချို့နှစ်များတွင် ပါဝင်တတ်သည်)
 *   ပေးထားသော ခေါင်းစဉ်များထဲမှ တစ်ခုကို ရွေးချယ်ပြီး **လုံးရေ ၃၃၀ မှ ၃၅၀ အတွင်း** စနစ်တကျ စာစီစာကုံး ရေးသားရပါသည် (ဥပမာ - "A person whom you admire most and why" သို့မဟုတ် "An experience in your life you can never forget")။
@@ -73,26 +73,26 @@ MAJA ရေးဖြေစာမေးပွဲတွင် **English Language**
 
 ### ၁။ 文字 (Character Readings - Kanji to Hiragana) 読み
  underlines ပေးထားသော Kanji စကားလုံးများကို Hiragana ဖြင့် မှန်ကန်စွာ ဖတ်ရှုပုံကို ရွေးချယ်ရပါသည်။
-*   `主人` $\rightarrow$ **しゅじん** (ရွေးချယ်ရန်အဖြေတွင် しゅうじん ဟု မှားယွင်းတတ်သောကြောင့် သတိပြုရန်)။
-*   `生まれた` $\rightarrow$ **生まれた** / `町` $\rightarrow$ **まち** / `建物` $\rightarrow$ **たてもの**。
-*   `妹` $\rightarrow$ **いもうと** / `時計` $\rightarrow$ **とけい**  / `買った` $\rightarrow$ **かった** ။
-*   `世界` $\rightarrow$ **せかい**  / `何千` $\rightarrow$ **なんぜん**/ `言語` $\rightarrow$ **げんご** ။
+*   `主人` → **しゅじん** (ရွေးချယ်ရန်အဖြေတွင် しゅうじん ဟု မှားယွင်းတတ်သောကြောင့် သတိပြုရန်)။
+*   `生まれた` → **生まれた** / `町` → **まち** / `建物` → **たてもの**。
+*   `妹` → **いもうと** / `時計` → **とけい**  / `買った` → **かった** ။
+*   `世界` → **せかい**  / `何千` → **なんぜん**/ `言語` → **げんご** ။
 
 ### ၂။ 漢字 (Character Writing - Hiragana to Kanji) 書き
 ဝါကျထဲတွင် underlined ပေးထားသော Hiragana စကားလုံးများကို ကွက်တိကိုက်ညီသော Kanji ဖြင့် ရွေးချယ်ရပါသည။
-*   `おうだん` (Oudan - ဖြတ်သန်းခြင်း) $\rightarrow$ **横断**  
-*   `いはん` (Ihan - စည်းကမ်းဖောက်ဖျက်ခြင်း) $\rightarrow$ **違反**  
-*   `つかまって` (Tsukamatte - အဖမ်းခံရခြင်း) $\rightarrow$ **捕まって**  
-*   `しょくじ` $\rightarrow$ **食事**/ `あと` $\rightarrow$ **後**  / `くすり` $\rightarrow$ **薬** / `のんで` $\rightarrow$ **飲んで**။
-*   `しけん` $\rightarrow$ **試験**  / `しつもん` $\rightarrow$ **質問**  / `こたえ` $\rightarrow$ **答え**  / `ようふく` $\rightarrow$ **洋服**  / `とくべつ` $\rightarrow$ **特別**  / `きもの` $\rightarrow$ **着物** ။
+*   `おうだん` (Oudan - ဖြတ်သန်းခြင်း) → **横断**  
+*   `いはん` (Ihan - စည်းကမ်းဖောက်ဖျက်ခြင်း) → **違反**  
+*   `つかまって` (Tsukamatte - အဖမ်းခံရခြင်း) → **捕まって**  
+*   `しょくじ` → **食事**/ `あと` → **後**  / `くすり` → **薬** / `のんで` → **飲んで**။
+*   `しけん` → **試験**  / `しつもん` → **質問**  / `こたえ` → **答え**  / `ようふく` → **洋服**  / `とくべつ` → **特別**  / `きもの` → **着物** ။
 
 ### ၃။ 文法 (Grammar and Particles -助詞と文法構造)
 ကွက်လပ်ဖြည့် ဝါကျများတွင် သင့်လျော်သော Particle များ သို့မဟုတ် Grammar ending စကားလုံးများကို ဖြည့်စွက်ရပါသည်။
-*   `田中さんが なんじに 来る＿＿＿＿ 知っていますか。` $\rightarrow$ **か** (田中さんが何時に来るか知っていますか) ။
-*   `わたしは すし ＿＿＿＿きらい です。` $\rightarrow$ **が** (私はすしがきらいです - Participle が ကို အသုံးပြုရန်)။
-*   `弟は運動しない＿＿＿＿＿ぜんぜんしないわけではない。` $\rightarrow$ **といっても** (弟は運動しないといっても全然しないわけではない)။
-*   `この仕事を頼まれた＿＿＿＿＿ 全力でやろうと思う。` $\rightarrow$ **からには** (この仕事を頼まれたからには全力でやろうと思う)။
-*   `手紙に 切手を はら＿＿＿＿＿出して しまった。` $\rightarrow$ **ずに** (手紙に切手をはらずに出してしまった - `ずに` သည် `ないで` နှင့် အတူတူပင်ဖြစ်သည်)။
+*   `田中さんが なんじに 来る＿＿＿＿ 知っていますか。` → **か** (田中さんが何時に来るか知っていますか) ။
+*   `わたしは すし ＿＿＿＿きらい です。` → **が** (私はすしがきらいです - Participle が ကို အသုံးပြုရန်)။
+*   `弟は運動しない＿＿＿＿＿ぜんぜんしないわけではない。` → **といっても** (弟は運動しないといっても全然しないわけではない)။
+*   `この仕事を頼まれた＿＿＿＿＿ 全力でやろうと思う。` → **からには** (この仕事を頼まれたからには全力でやろうと思う)။
+*   `手紙に 切手を はら＿＿＿＿＿出して しまった。` → **ずに** (手紙に切手をはらずに出してしまった - `ずに` သည် `ないで` နှင့် အတူတူပင်ဖြစ်သည်)။
 
 ### ၄။ 会話 (Realistic Conversational Contexts -会話文)
 တကယ့်လက်တွေ့ စကားပြောဆိုမှု အခင်းအကျင်းများတွင် ယဉ်ကျေးသော သုံးနှုန်းမှု (Honorifics/Keigo) ကို သေချာစွာ နားလည်ထားရန် လိုအပ်ပါတယ်။
@@ -127,6 +127,3 @@ MAJA ရေးဖြေစာမေးပွဲတွင် **English Language**
 ## 📢 မျိုးဆက်သစ်များအတွက် နိဂုံးချုပ် စကားလက်ဆောင် (A Message of Encouragement)
 
 > *"ရေးဖြေစာမေးပွဲဆိုတာ မင်းတို့ ခေါင်းထဲက စာတွေကို အကုန်ကျက်ရွတ်ပြရမယ့် နေရာမဟုတ်ဘူး။ ဒါဟာ အခြေခံ သဒ္ဒါကျွမ်းကျင်မှုနဲ့ စိတ်ဖိစီးမှုအောက်မှာ ဆုံးဖြတ်ချက်ကို တိတိကျကျနဲ့ မြန်မြန်ဆန်ဆန် ချမှတ်နိုင်စွမ်း (Speed & Accuracy under pressure) ကို စမ်းသပ်တာ ဖြစ်တယ်။ ကံတရားထက် မင်းတို့ သေသေချာချာ စနစ်တကျ လေ့ကျင့်ပြင်ဆင်ခဲ့တဲ့ အားထုတ်မှု (Effort) ကသာ မင်းတို့ကို အင်တာဗျူးအခန်းထဲအထိ ပို့ဆောင်ပေးနိုင်မှာ ဖြစ်တယ်"*
-
----
-*Created by NotebookLM on behalf of Yan Naing Kyaw Tint for the next-generation MEXT Scholars.*
