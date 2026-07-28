@@ -10,7 +10,7 @@
 
 ## 📋 ၁။ စာမေးပွဲ ပုံစံစနစ်စစ်စစ် (The Official Exam Format)
 
-MEXT Research Students အင်္ဂလိပ်စာမေးပွဲသည် **၁၀၀ ရာခိုင်နှုန်း Multiple Choice (MCQ - A, B, C, D) ပုံစံသာ ဖြစ်ပါတယ်** [၃၈, ၁၁၈]။ ကိုယ်တိုင်စာလုံးပေါင်း ရေးဖြည့်ရတာမျိုး၊ စာကြောင်းလိုက် ပြန်လည်ပြင်ဆင်ရေးသားရတာမျိုး (Open-ended/Written) လုံးဝ မပါဝင်ပါဘူး။
+MEXT Research Students အင်္ဂလိပ်စာမေးပွဲသည် **၁၀၀ ရာခိုင်နှုန်း Multiple Choice (MCQ - A, B, C, D) ပုံစံသာ ဖြစ်ပါတယ်** ။ ကိုယ်တိုင်စာလုံးပေါင်း ရေးဖြည့်ရတာမျိုး၊ စာကြောင်းလိုက် ပြန်လည်ပြင်ဆင်ရေးသားရတာမျိုး (Open-ended/Written) လုံးဝ မပါဝင်ပါဘူး။
 
 *   **သတ်မှတ်အချိန် (Time Limit):** **မိနစ် ၆၀ (၁ နာရီ) သာ ပေးပါတယ်။** (၂ နာရီ လုံးဝ မဟုတ်ပါ!)
 *   **မေးခွန်းအရေအတွက်:** စုစုပေါင်း **၅၀ ပုဒ်**
@@ -34,7 +34,7 @@ MEXT Research Students အင်္ဂလိပ်စာမေးပွဲသည
     *   **Inverted Conditionals:** "Should you be unable to attend..." (If you should be... အစား) [၁၀၀, ၁၂၀] သို့မဟုတ် "Had we not..." (If we had not... အစား)။
     *   **Subjunctive Mood:** "...demanded that his speech be memorized" (Base verb ဖြစ်သော 'be' သုံးရခြင်း)။
     *   **Passive Causative:** "...get/have something done" သို့မဟုတ် "...make someone to do" (Passive conversion လှည့်ကွက်များ)။
-    *   **Preposition collocations:** "concentrate on" (concentrate in မဟုတ်ပါ) [၅၄, ၅၈]၊ "different from" စသည့် prepositions လှည့်ကွက်များ။
+    *   **Preposition collocations:** "concentrate on" (concentrate in မဟုတ်ပါ)၊ "different from" စသည့် prepositions လှည့်ကွက်များ။
 
 ### SECTION III: Spotting Errors (၁၀ ပုဒ် - ၂၀ မှတ်) -- *The Absolute Time-Killer!*
 *   **ပုံစံ:** ရှည်လျားပြီး ရှုပ်ထွေးတဲ့ အဆင့်မြင့်စာပိုဒ် (၁၀) ပိုဒ် ပေးထားပါတယ်။ စာပိုဒ်တစ်ပိုဒ်ချင်းစီရဲ့ အောက်မှာ (A, B, C, D) ဆိုပြီး မျဉ်းတားထားတဲ့ အပိုင်း ၄ ပိုင်း ရှိပြီး၊ ၎င်းတို့ထဲမှ **သဒ္ဒါစနစ် မှားယွင်းနေတဲ့ အပိုင်းကို ရှာဖွေရတာ ဖြစ်ပါတယ်။** 
