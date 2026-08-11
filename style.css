@@ -1145,6 +1145,23 @@ body.dark-mode .btn-custom-outline:hover {
     color: var(--accent-gold) !important;
 }
 
+body.dark-mode .callout-box {
+    background-color: rgba(212, 175, 55, 0.1) !important; /* နောက်ခံကို ရွှေရောင်မှိုင်းမှိုင်းလေး ပြောင်းမည် */
+}
+
+body.dark-mode .callout-box h6 {
+    color: #fcd34d !important; 
+}
+
+body.dark-mode .callout-box p,
+body.dark-mode .callout-box strong {
+    color: #e2e8f0 !important; 
+}
+
+body.dark-mode #community-qa .text-muted {
+    color: #cbd5e1 !important; 
+}
+
 /* 📲 QUICK SHARE BAR STYLING */
 .quick-share-bar {
     background: var(--card-bg);
