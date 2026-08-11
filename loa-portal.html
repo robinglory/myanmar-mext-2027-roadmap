@@ -1,156 +1,183 @@
 <!DOCTYPE html>
 <html lang="my">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phase 2: LOA Application Portal | MEXT 2027</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="loa-page-bg">
-
-    <!-- 🌟 DYNAMIC HERO SECTION WITH NEW BACKGROUND -->
-    <header class="loa-hero-dynamic">
-        <div class="container text-center position-relative z-2">
-            <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.3);">
-                <i class="bi bi-shield-lock-fill text-warning"></i>
-                <span class="text-warning small fw-bold tracking-wider">PHASE 2 : EXCLUSIVE ACCESS</span>
-            </div>
-            
-            <h1 class="serif-font fw-bold text-white mb-3" style="font-size: 2.8rem;">University LOA Portal</h1>
-            
-            <p class="text-light mx-auto mb-4" style="max-width: 600px; opacity: 0.85; font-size: 1rem; line-height: 1.7;">
-                First Screening အောင်မြင်ထားသော ကျောင်းသားများအတွက် ဂျပန်တက္ကသိုလ် အသီးသီးသို့ Letter of Provisional Acceptance (LOA) တောင်းခံရာတွင် အသုံးပြုရမည့် ကိုယ်တွေ့လမ်းညွှန်များ။
-            </p>
-            
-            <a href="index.html" class="btn btn-outline-light rounded-pill px-4 py-2" style="font-size: 0.9rem;">
-                <i class="bi bi-arrow-left me-2"></i> Main Roadmap သို့ ပြန်သွားရန်
-            </a>
-        </div>
-    </header>
-
-    <!-- 🎓 COMPACT UNIVERSITY DOSSIER CARDS -->
-    <main class="container mb-5 z-2" style="margin-top: -30px; position: relative;">
-        <!-- JavaScript မှ ကတ်များကို ဤနေရာတွင် အလိုအလျောက် ထည့်သွင်းပေးပါမည် (Row G-3 ဖြင့် ကျစ်လျစ်စွာပြမည်) -->
-        <div class="row g-3 justify-content-center" id="university-grid">
-            <!-- Cards will be injected here automatically -->
-        </div>
-    </main>
-
-    <!-- Modal for Reading Markdown -->
-    <div class="modal fade" id="markdownModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-scrollable">
-            <div class="modal-content" style="border-radius: 16px; border: none; box-shadow: 0 25px 50px rgba(0,0,0,0.3);">
-                <div class="modal-header bg-dark text-white" style="border-radius: 16px 16px 0 0; padding: 20px 30px;">
-                    <h5 class="modal-title serif-font text-warning" id="mdModalTitle">Document</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4 p-md-5">
-                    <div id="mdModalBody" class="markdown-body"></div>
-                </div>
-                <div class="modal-footer bg-light" style="border-radius: 0 0 16px 16px; padding: 15px 30px;">
-                    <button type="button" class="btn btn-dark rounded-pill px-4" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 🌗 DARK MODE BUTTON -->
-    <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Dark/Light Theme">
-        <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
-    </button>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-
-    <script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Phase 2: LOA Application Portal | MEXT 2027</title>
         
-        const universities = [
-            {
-                name: "Osaka University",
-                system: "AAD SYSTEM",
-                color: "#0984e3",
-                icon: "bi-bank2",
-                desc: "Admissions Assistance Desk (AAD) အွန်လိုင်းစနစ်ကို အသုံးပြု၍ ပရော်ဖက်ဆာများထံ ယာယီလက်ခံကြောင်းပေးစာ (LoA) တောင်းခံခြင်း အဆင့်ဆင့် လမ်းညွှန်။",
-                author: "Yan Naing Kyaw Tint",
-                authorBg: "d4af37",
-                mdFile: "osaka-university-aad-guide.md"
-            },
-            {
-                name: "The University of Tokyo",
-                system: "T-CENS SYSTEM",
-                color: "#e84393",
-                icon: "bi-mortarboard-fill",
-                desc: "Graduate School of Engineering အတွက် T-cens Online System မှတစ်ဆင့် LOA တောင်းခံခြင်းနှင့် Email ပေးပို့ရမည့် ပုံစံအပြည့်အစုံ လမ်းညွှန်။",
-                author: "Yan Naing Kyaw Tint",
-                authorBg: "e84393",
-                mdFile: "utokyo-mext-application-guide.md"
-            },
-            {
-                name: "Unkown",
-                system: "Unkown",
-                color: "#FFEA68",
-                icon: "bi-mortarboard-fill",
-                desc: "Graduate School of Engineering အတွက် T-cens Online System မှတစ်ဆင့် LOA တောင်းခံခြင်းနှင့် Email ပေးပို့ရမည့် ပုံစံအပြည့်အစုံ လမ်းညွှန်။",
-                author: "Unkown",
-                authorBg: "FFEA88",
-                mdFile: "utokyo-mext-application.md"
-            }            
-            // နောက်ထပ် ကျောင်းအသစ်များ ရောက်လာပါက ဤအောက်တွင် ထပ်ထည့်ပါ...
-        ];
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="loa-page-bg">
 
-        // 2. HTML Auto-Generator Logic
-        const grid = document.getElementById('university-grid');
-        let htmlContent = '';
+        <!-- 🌟 DYNAMIC HERO SECTION WITH NEW BACKGROUND -->
+        <header class="loa-hero-dynamic">
+            <div class="container text-center position-relative z-2">
+                <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.3);">
+                    <i class="bi bi-shield-lock-fill text-warning"></i>
+                    <span class="text-warning small fw-bold tracking-wider">PHASE 2 : EXCLUSIVE ACCESS</span>
+                </div>
+                
+                <h1 class="serif-font fw-bold text-white mb-3" style="font-size: 2.8rem;">University LOA Portal</h1>
+                
+                <p class="text-light mx-auto mb-4" style="max-width: 600px; opacity: 0.85; font-size: 1rem; line-height: 1.7;">
+                    First Screening အောင်မြင်ထားသော ကျောင်းသားများအတွက် ဂျပန်တက္ကသိုလ် အသီးသီးသို့ Letter of Provisional Acceptance (LOA) တောင်းခံရာတွင် အသုံးပြုရမည့် ကိုယ်တွေ့လမ်းညွှန်များ။
+                </p>
+                
+                <a href="index.html" class="btn btn-outline-light rounded-pill px-4 py-2" style="font-size: 0.9rem;">
+                    <i class="bi bi-arrow-left me-2"></i> Main Roadmap သို့ ပြန်သွားရန်
+                </a>
+            </div>
+        </header>
 
-        universities.forEach(uni => {
-            // "Guest Author" လို့ နာမည်မပေါ်အောင် ပုံထဲမှာ နာမည်ပြောင်းပေးရန်
-            const avatarName = encodeURIComponent(uni.author); 
-            
-            htmlContent += `
-            <div class="col-md-6 col-lg-4"> <!-- Col-lg-4 သုံးထားသဖြင့် တစ်တန်းလျှင် ၃ ကတ် ဝင်ဆံ့ပါမည် -->
-                <div class="uni-card-compact">
-                    <div class="uni-card-color-bar" style="background-color: ${uni.color};"></div>
-                    <div class="uni-card-body">
-                        
-                        <div class="d-flex align-items-center gap-3 mb-3">
-                            <div class="uni-card-icon" style="color: ${uni.color}; background: ${uni.color}15;">
-                                <i class="bi ${uni.icon}"></i>
-                            </div>
-                            <div>
-                                <span class="uni-card-system" style="color: ${uni.color};">${uni.system}</span>
-                                <h3 class="uni-card-title">${uni.name}</h3>
-                            </div>
-                        </div>
+        <!-- 🎓 COMPACT UNIVERSITY DOSSIER CARDS -->
+        <main class="container mb-5 z-2" style="margin-top: -30px; position: relative;">
+            <!-- JavaScript မှ ကတ်များကို ဤနေရာတွင် အလိုအလျောက် ထည့်သွင်းပေးပါမည် (Row G-3 ဖြင့် ကျစ်လျစ်စွာပြမည်) -->
+            <div class="row g-3 justify-content-center" id="university-grid">
+                <!-- Cards will be injected here automatically -->
+            </div>
+        </main>
 
-                        <p class="uni-card-desc">${uni.desc}</p>
-
-                        <div class="uni-card-author">
-                            <img src="https://ui-avatars.com/api/?name=${avatarName}&background=${uni.authorBg}&color=fff&rounded=true&bold=true" alt="Author" width="28" height="28">
-                            <div class="d-flex flex-column lh-1">
-                                <span class="text-muted" style="font-size: 0.55rem; font-weight: 700; text-transform: uppercase;">Guided By</span>
-                                <span class="fw-bold" style="color: var(--dark-navy); font-size: 0.75rem;">${uni.author}</span>
-                            </div>
-                        </div>
-
-                        <button onclick="viewMarkdown('${uni.mdFile}', '${uni.name} - ${uni.system} Guide')" class="btn uni-card-btn">
-                            <i class="bi bi-journal-text me-1"></i> ဖတ်ရှုရန် ဖွင့်မည်
-                        </button>
-                        
+        <!-- Modal for Reading Markdown -->
+        <div class="modal fade" id="markdownModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                <div class="modal-content" style="border-radius: 16px; border: none; box-shadow: 0 25px 50px rgba(0,0,0,0.3);">
+                    <div class="modal-header bg-dark text-white" style="border-radius: 16px 16px 0 0; padding: 20px 30px;">
+                        <h5 class="modal-title serif-font text-warning" id="mdModalTitle">Document</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-4 p-md-5">
+                        <div id="mdModalBody" class="markdown-body"></div>
+                    </div>
+                    <div class="modal-footer bg-light" style="border-radius: 0 0 16px 16px; padding: 15px 30px;">
+                        <button type="button" class="btn btn-dark rounded-pill px-4" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
-            </div>`;
-        });
+            </div>
+        </div>
 
-        grid.innerHTML = htmlContent;
-    </script>
-</body>
+        <!-- 🌗 DARK MODE BUTTON -->
+        <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Dark/Light Theme">
+            <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+        </button>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+
+        <script>
+            
+            const universities = [
+                {
+                    name: "Osaka University",
+                    system: "AAD SYSTEM",
+                    color: "#0984e3",
+                    icon: "bi-bank2",
+                    desc: "Admissions Assistance Desk (AAD) အွန်လိုင်းစနစ်ကို အသုံးပြု၍ ပရော်ဖက်ဆာများထံ ယာယီလက်ခံကြောင်းပေးစာ (LoA) တောင်းခံခြင်း အဆင့်ဆင့် လမ်းညွှန်။",
+                    author: "Yan Naing Kyaw Tint",
+                    authorBg: "d4af37",
+                    mdFile: "osaka-university-aad-guide.md"
+                },
+                {
+                    name: "The University of Tokyo",
+                    system: "T-CENS SYSTEM",
+                    color: "#e84393",
+                    icon: "bi-mortarboard-fill",
+                    desc: "Graduate School of Engineering အတွက် T-cens Online System မှတစ်ဆင့် LOA တောင်းခံခြင်းနှင့် Email ပေးပို့ရမည့် ပုံစံအပြည့်အစုံ လမ်းညွှန်။",
+                    author: "Yan Naing Kyaw Tint",
+                    authorBg: "e84393",
+                    mdFile: "utokyo-mext-application-guide.md"
+                },
+                {
+                    name: "Unkown",
+                    system: "Unkown",
+                    color: "#FFEA68",
+                    icon: "bi-mortarboard-fill",
+                    desc: "Graduate School of Engineering အတွက် T-cens Online System မှတစ်ဆင့် LOA တောင်းခံခြင်းနှင့် Email ပေးပို့ရမည့် ပုံစံအပြည့်အစုံ လမ်းညွှန်။",
+                    author: "Unkown",
+                    authorBg: "FFEA88",
+                    mdFile: "utokyo-mext-application.md"
+                }            
+                // နောက်ထပ် ကျောင်းအသစ်များ ရောက်လာပါက ဤအောက်တွင် ထပ်ထည့်ပါ...
+            ];
+
+            // 2. HTML Auto-Generator Logic
+            const grid = document.getElementById('university-grid');
+            let htmlContent = '';
+
+            universities.forEach(uni => {
+                // "Guest Author" လို့ နာမည်မပေါ်အောင် ပုံထဲမှာ နာမည်ပြောင်းပေးရန်
+                const avatarName = encodeURIComponent(uni.author); 
+                
+                htmlContent += `
+                <div class="col-md-6 col-lg-4"> <!-- Col-lg-4 သုံးထားသဖြင့် တစ်တန်းလျှင် ၃ ကတ် ဝင်ဆံ့ပါမည် -->
+                    <div class="uni-card-compact">
+                        <div class="uni-card-color-bar" style="background-color: ${uni.color};"></div>
+                        <div class="uni-card-body">
+                            
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="uni-card-icon" style="color: ${uni.color}; background: ${uni.color}15;">
+                                    <i class="bi ${uni.icon}"></i>
+                                </div>
+                                <div>
+                                    <span class="uni-card-system" style="color: ${uni.color};">${uni.system}</span>
+                                    <h3 class="uni-card-title">${uni.name}</h3>
+                                </div>
+                            </div>
+
+                            <p class="uni-card-desc">${uni.desc}</p>
+
+                            <div class="uni-card-author">
+                                <img src="https://ui-avatars.com/api/?name=${avatarName}&background=${uni.authorBg}&color=fff&rounded=true&bold=true" alt="Author" width="28" height="28">
+                                <div class="d-flex flex-column lh-1">
+                                    <span class="text-muted" style="font-size: 0.55rem; font-weight: 700; text-transform: uppercase;">Guided By</span>
+                                    <span class="fw-bold" style="color: var(--dark-navy); font-size: 0.75rem;">${uni.author}</span>
+                                </div>
+                            </div>
+
+                            <button onclick="viewMarkdown('${uni.mdFile}', '${uni.name} - ${uni.system} Guide')" class="btn uni-card-btn">
+                                <i class="bi bi-journal-text me-1"></i> ဖတ်ရှုရန် ဖွင့်မည်
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>`;
+            });
+
+            grid.innerHTML = htmlContent;
+        </script>
+    </body>
+
+<!-- 🌐 ELEGANT MINIMAL FOOTER -->
+    <footer>
+        <div class="container">
+            <p class="mb-1 text-white serif-font" style="font-size: 1.3rem; letter-spacing: 2px;">MEXT SCHOLARSHIP ROADMAP</p>
+            <p class="small mb-3 text-secondary">A Legacy of Knowledge for Next-Generation Myanmar Scholars.</p>
+
+            <!-- 📜 MYANMAR LICENSE INFO -->
+            <div class="license-box">
+                <i class="bi bi-shield-check text-warning fs-5 d-block mb-1"></i>
+                <strong class="text-white d-block mb-1">ပညာရေးဆိုင်ရာ အခမဲ့ မျှဝေခွင့် လိုင်စင် (Open Educational Resource License)</strong>
+                ဤဝဘ်ဆိုက်ရှိ လမ်းညွှန်စာတမ်းများနှင့် မာတိကာများအားလုံးကို မျိုးဆက်သစ် မြန်မာကျောင်းသား/သူများ၏ ပညာရေးအလို့ငှာ အခမဲ့ လွတ်လပ်စွာ ဖတ်ရှုခြင်း၊ ကူးယူသိမ်းဆည်းခြင်းနှင့် မျှဝေအသုံးပြုခြင်းများကို ခွင့်ပြုထားပါသည်။ 
+                <span class="text-warning">(သတိပြုရန် - စီးပွားရေးဆန်ဆန် ရောင်းချခြင်း သို့မဟုတ် တစ်ကိုယ်ရေ ကိုယ်ကျိုးစီးပွားအတွက် မူပိုင်ခွင့်အလွဲသုံးစား ပြုလုပ်ခြင်းကို လုံးဝ ခွင့်မပြုပါ)။</span>
+            </div>
+            <!-- 👀 LIVE VISITOR COUNTER BADGE -->
+            <div class="visitor-stats">
+                <span><i class="bi bi-eye-fill text-info me-1"></i> စုစုပေါင်း ဝင်ရောက်ဖတ်ရှုသူ -</span>
+                <img src="https://api.visitorbadge.io/api/visitors?path=robinglory.github.io.myanmar-mext-2027-roadmap&label=VIEWS&labelColor=%230f172a&countColor=%23d4af37&style=flat" alt="Visitor Count" style="vertical-align: middle;">
+            </div>
+
+            
+            <!-- COPYRIGHT & AUTHOR -->
+            <div class="border-top border-secondary pt-3 mt-3" style="opacity: 0.6; font-size: 0.8rem;">
+                © 2026 Designed & Maintained by <a href="https://github.com/robinglory" target="_blank" class="text-light text-decoration-none fw-bold">Yan Naing Kyaw Tint</a>. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 </html>
