@@ -185,3 +185,27 @@ function copyPortalLink() {
 document.addEventListener("DOMContentLoaded", function() {
     initTheme();
 });
+
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    const icon = document.getElementById('themeIcon');
+    const isDark = document.body.classList.contains('dark-mode');
+    
+    if (isDark) {
+        icon.className = 'bi bi-sun-fill';
+        localStorage.setItem('mext_theme', 'dark');
+    } else {
+        icon.className = 'bi bi-moon-stars-fill';
+        localStorage.setItem('mext_theme', 'light');
+    }
+
+    // 💬 Giscus Comment Box ကိုပါ Dark/Light ချက်ချင်း ပြောင်းပေးခြင်း
+    const giscusTheme = isDark ? 'transparent_dark' : 'light';
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (iframe) {
+        iframe.contentWindow.postMessage(
+            { giscus: { setConfig: { theme: giscusTheme } } },
+            'https://giscus.app'
+        );
+    }
+}
