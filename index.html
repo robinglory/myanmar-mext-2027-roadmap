@@ -44,34 +44,129 @@
                     <i class="bi bi-github"></i> robinglory ↗
                 </a>
             </div>
+            
             <br>
 
             <!-- CTA BUTTON -->
             <a href="#repository" class="btn-elegant"><i class="bi bi-folder2-open me-2"></i>လမ်းညွှန်စာတမ်းများ ရယူရန်</a>
         </div>
     </header>
-
+    <!-- 🧭 COMPACT HORIZONTAL TIMELINE (CLICKABLE MAP) -->
+    
     <main class="container my-5 pt-4" id="repository">
-        <div class="text-center">
-            <div class="quick-share-bar">
-                <span class="small fw-bold text-secondary me-1"><i class="bi bi-share-fill text-warning me-1"></i> လမ်းညွှန်ကို မျှဝေရန် -</span>
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frobinglory.github.io%2Fmyanmar-mext-2027-roadmap%2F" target="_blank" class="share-btn bg-fb" title="Share on Facebook"><i class="bi bi-facebook"></i></a>
-                <!-- Telegram -->
-                <a href="https://t.me/share/url?url=https%3A%2F%2Frobinglory.github.io%2Fmyanmar-mext-2027-roadmap%2F&text=MEXT%202027%20Complete%20Roadmap%20and%20Guidelines%20Portal" target="_blank" class="share-btn bg-tg" title="Share on Telegram"><i class="bi bi-telegram"></i></a>
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Frobinglory.github.io%2Fmyanmar-mext-2027-roadmap%2F" target="_blank" class="share-btn bg-li" title="Share on LinkedIn"><i class="bi bi-linkedin"></i></a>
-                <!-- Copy Link Button -->
-                <button onclick="copyPortalLink()" id="copyBtn" class="bg-copy d-inline-flex align-items-center gap-1">
-                    <i class="bi bi-link-45deg fs-5"></i> <span id="copyText">Copy Link</span>
-                </button>
-            </div>
-        </div>
-        <div class="section-title">
-            <h2>MEXT Golden Guidelines Repository</h2>
-            <p>အလွယ်တကူ ဖတ်ရှုနိုင်ရန်နှင့် ဒေါင်းလုဒ်ဆွဲယူနိုင်ရန် စနစ်တကျ ခွဲခြားပေးထားသော မူရင်း Markdown (.md) ဖိုင်များ</p>
-        </div>
 
+        <section id="proportional-roadmap" class="mb-5">
+            <div class="text-center mb-5">
+                <span class="text-warning fw-bold d-block mb-2" style="font-size: 1.1rem; letter-spacing: 2px;">
+                    <i class="bi bi-map-fill me-1"></i> THE MEXT JOURNEY
+                </span>
+                <h2 class="serif-font fw-bold mb-3" style="color: var(--dark-navy); font-size: 2.8rem;">
+                    Step-by-Step Roadmap
+                </h2>
+                <p class="text-secondary" style="font-size: 1.15rem;">
+                    အဆင့်များကို နှိပ်၍ အောက်ဘက်ရှိ လမ်းညွှန်စာတမ်းများဆီသို့ တိုက်ရိုက်သွားပါ။
+                </p>
+            </div>
+            
+            <div class="hz-pro-wrapper">
+                <div class="hz-pro-container">
+                    <!-- Central Horizontal Road -->
+                    <div class="hz-pro-road"></div>
+
+                    <!-- Step 0 -->
+                    <div class="hz-pro-step top" onclick="viewMarkdown('mext-step0-proposal-guideline.md', 'Step 0: သုတေသနအဆိုပြုလွှာ ပြင်ဆင်ခြင်း')">
+                        <div class="hz-pro-content">
+                            <div class="hz-pro-icon" style="border-color: #e84393; color: #e84393;">
+                                <i class="bi bi-lightbulb-fill"></i>
+                            </div>
+                            <div class="hz-pro-text">
+                                <div class="hz-pro-badge" style="color: #e84393;">RESEARCH</div>
+                                <h5 class="hz-pro-title">Step 0</h5>
+                            </div>
+                        </div>
+                        <div class="hz-pro-pole" style="background-color: #e84393;"></div>
+                        <div class="hz-pro-dot" style="background-color: #e84393;"></div>
+                    </div>
+
+                    <!-- Step 1 -->
+                    <div class="hz-pro-step bottom" onclick="viewMarkdown('mext-step1-application-guideline.md', 'Step 1: လျှောက်လွှာ တင်သွင်းခြင်း လမ်းညွှန်')">
+                        <div class="hz-pro-dot" style="background-color: #0984e3;"></div>
+                        <div class="hz-pro-pole" style="background-color: #0984e3;"></div>
+                        <div class="hz-pro-content">
+                            <div class="hz-pro-text">
+                                <div class="hz-pro-badge" style="color: #0984e3;">SUBMISSION</div>
+                                <h5 class="hz-pro-title">Step 1</h5>
+                            </div>
+                            <div class="hz-pro-icon" style="border-color: #0984e3; color: #0984e3;">
+                                <i class="bi bi-file-earmark-arrow-up-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="hz-pro-step top" onclick="viewMarkdown('mext-step2-maja-written-guideline.md', 'Step 2: MAJA ရေးဖြေစာမေးပွဲ လမ်းညွှန်')">
+                        <div class="hz-pro-content">
+                            <div class="hz-pro-icon" style="border-color: #00b894; color: #00b894;">
+                                <i class="bi bi-pencil-square"></i>
+                            </div>
+                            <div class="hz-pro-text">
+                                <div class="hz-pro-badge" style="color: #00b894;">WRITTEN EXAM</div>
+                                <h5 class="hz-pro-title">Step 2</h5>
+                            </div>
+                        </div>
+                        <div class="hz-pro-pole" style="background-color: #00b894;"></div>
+                        <div class="hz-pro-dot" style="background-color: #00b894;"></div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="hz-pro-step bottom" onclick="viewMarkdown('mext-step3-maja-interview-guideline.md', 'Step 3: MAJA ပဏာမအင်တာဗျူး လမ်းညွှန်')">
+                        <div class="hz-pro-dot" style="background-color: #e17055;"></div>
+                        <div class="hz-pro-pole" style="background-color: #e17055;"></div>
+                        <div class="hz-pro-content">
+                            <div class="hz-pro-text">
+                                <div class="hz-pro-badge" style="color: #e17055;">MAJA INTERVIEW</div>
+                                <h5 class="hz-pro-title">Step 3</h5>
+                            </div>
+                            <div class="hz-pro-icon" style="border-color: #e17055; color: #e17055;">
+                                <i class="bi bi-chat-dots-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="hz-pro-step top" onclick="viewMarkdown('mext-step4-embassy-written-guideline.md', 'Step 4: သံရုံးအဆင့် ရေးဖြေစာမေးပွဲ')">
+                        <div class="hz-pro-content">
+                            <div class="hz-pro-icon" style="border-color: #6c5ce7; color: #6c5ce7;">
+                                <i class="bi bi-building-check"></i>
+                            </div>
+                            <div class="hz-pro-text">
+                                <div class="hz-pro-badge" style="color: #6c5ce7;">EMBASSY EXAM</div>
+                                <h5 class="hz-pro-title">Step 4</h5>
+                            </div>
+                        </div>
+                        <div class="hz-pro-pole" style="background-color: #6c5ce7;"></div>
+                        <div class="hz-pro-dot" style="background-color: #6c5ce7;"></div>
+                    </div>
+
+                    <!-- Step 5 - FINAL -->
+                    <div class="hz-pro-step bottom" onclick="viewMarkdown('mext-step5-embassy-interview-guideline.md', 'Step 5: သံရုံး နောက်ဆုံးအဆင့် အင်တာဗျူးကြီး')">
+                        <div class="hz-pro-dot" style="background-color: var(--accent-gold);"></div>
+                        <div class="hz-pro-pole" style="background-color: var(--accent-gold);"></div>
+                        <div class="hz-pro-content">
+                            <div class="hz-pro-text">
+                                <div class="hz-pro-badge" style="color: var(--accent-gold);">FINAL INTERVIEW</div>
+                                <h5 class="hz-pro-title">Step 5</h5>
+                            </div>
+                            <div class="hz-pro-icon" style="border-color: var(--accent-gold); color: var(--accent-gold); background-color: #fffbeb;">
+                                <i class="bi bi-trophy-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
         <!-- 🌟 FILE 1: MASTER ROADMAP (Featured) -->
         <div class="master-card">
             <div class="row align-items-center">
@@ -284,9 +379,9 @@
                 <!-- Final -->
                 <div class="col-12 col-lg">
                     <div class="stat-box-clean p-3 rounded-3 border h-100 d-flex flex-column justify-content-center shadow" style="background: linear-gradient(145deg, #0f172a, #1e293b); border-color: #334155 !important;">
-                        <span class="text-warning small fw-bold tracking-wider d-block mb-1" style="font-size: 0.65rem;">★ EXPECTED WINNERS</span>
-                        <h3 class="fw-bold mb-2 stat-number" style="color: var(--accent-gold);">၁၅ ~ ၁၈ <span class="fs-6 fw-normal text-light">ဦး</span></h3>
-                        <small class="text-light d-block" style="font-size: 0.75rem; opacity: 0.8;">~၁၃.၅% Overall Chance</small>
+                        <span class="text-warning small fw-bold tracking-wider d-block mb-1" style="font-size: 0.65rem;">1ST SCREENING WINNERS</span>
+                        <h3 class="fw-bold mb-2 stat-number" style="color: var(--accent-gold);">၁၉ <span class="fs-6 fw-normal text-light">ဦး</span></h3>
+                        <small class="text-light d-block" style="font-size: 0.75rem; opacity: 0.8;">၁၄% Overall Chance</small>
                     </div>
                 </div>
             </div>
@@ -353,6 +448,21 @@
                 </p>
             </div>
         </section>
+        <div class="text-center">
+            <div class="quick-share-bar">
+                <span class="small fw-bold text-secondary me-1"><i class="bi bi-share-fill text-warning me-1"></i> လမ်းညွှန်ကို မျှဝေရန် -</span>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frobinglory.github.io%2Fmyanmar-mext-2027-roadmap%2F" target="_blank" class="share-btn bg-fb" title="Share on Facebook"><i class="bi bi-facebook"></i></a>
+                <!-- Telegram -->
+                <a href="https://t.me/share/url?url=https%3A%2F%2Frobinglory.github.io%2Fmyanmar-mext-2027-roadmap%2F&text=MEXT%202027%20Complete%20Roadmap%20and%20Guidelines%20Portal" target="_blank" class="share-btn bg-tg" title="Share on Telegram"><i class="bi bi-telegram"></i></a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Frobinglory.github.io%2Fmyanmar-mext-2027-roadmap%2F" target="_blank" class="share-btn bg-li" title="Share on LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <!-- Copy Link Button -->
+                <button onclick="copyPortalLink()" id="copyBtn" class="bg-copy d-inline-flex align-items-center gap-1">
+                    <i class="bi bi-link-45deg fs-5"></i> <span id="copyText">Copy Link</span>
+                </button>
+            </div>
+        </div>
     </main>
 
     <!-- 🌐 ELEGANT MINIMAL FOOTER -->
@@ -368,13 +478,13 @@
                 ဤဝဘ်ဆိုက်ရှိ လမ်းညွှန်စာတမ်းများနှင့် မာတိကာများအားလုံးကို မျိုးဆက်သစ် မြန်မာကျောင်းသား/သူများ၏ ပညာရေးအလို့ငှာ အခမဲ့ လွတ်လပ်စွာ ဖတ်ရှုခြင်း၊ ကူးယူသိမ်းဆည်းခြင်းနှင့် မျှဝေအသုံးပြုခြင်းများကို ခွင့်ပြုထားပါသည်။ 
                 <span class="text-warning">(သတိပြုရန် - စီးပွားရေးဆန်ဆန် ရောင်းချခြင်း သို့မဟုတ် တစ်ကိုယ်ရေ ကိုယ်ကျိုးစီးပွားအတွက် မူပိုင်ခွင့်အလွဲသုံးစား ပြုလုပ်ခြင်းကို လုံးဝ ခွင့်မပြုပါ)။</span>
             </div>
-
             <!-- 👀 LIVE VISITOR COUNTER BADGE -->
             <div class="visitor-stats">
                 <span><i class="bi bi-eye-fill text-info me-1"></i> စုစုပေါင်း ဝင်ရောက်ဖတ်ရှုသူ -</span>
                 <img src="https://api.visitorbadge.io/api/visitors?path=robinglory.github.io.myanmar-mext-2027-roadmap&label=VIEWS&labelColor=%230f172a&countColor=%23d4af37&style=flat" alt="Visitor Count" style="vertical-align: middle;">
             </div>
 
+            
             <!-- COPYRIGHT & AUTHOR -->
             <div class="border-top border-secondary pt-3 mt-3" style="opacity: 0.6; font-size: 0.8rem;">
                 © 2026 Designed & Maintained by <a href="https://github.com/robinglory" target="_blank" class="text-light text-decoration-none fw-bold">Yan Naing Kyaw Tint</a>. All Rights Reserved.
