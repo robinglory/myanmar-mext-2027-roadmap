@@ -175,7 +175,6 @@ h1, h2, h3, h4, h5, h6, .serif-font {
         font-size: 0.75rem !important;
         margin-bottom: 12px !important;
         display: -webkit-box;
-        -webkit-line-clamp: 3; 
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
@@ -520,6 +519,13 @@ body.dark-mode .markdown-body h3 {
 body.dark-mode .markdown-body th {
     background-color: #0f172a !important;
     color: var(--accent-gold) !important;
+}
+body.dark-mode .text-muted {
+    color: #94a3b8 !important; 
+}
+
+body.dark-mode .fs-6.fw-normal.text-muted {
+    color: #94a3b8 !important;
 }
 
 body.dark-mode .markdown-body td, 

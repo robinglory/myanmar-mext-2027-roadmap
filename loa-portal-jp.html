@@ -30,7 +30,7 @@
             <div class="position-absolute top-0 end-0 m-3 m-md-4 z-3">
                 <div class="dropdown">
                     <button class="btn btn-outline-light dropdown-toggle rounded-pill px-3 fw-bold" type="button" data-bs-toggle="dropdown" style="font-size: 0.85rem; background: rgba(0,0,0,0.4); backdrop-filter: blur(5px);">
-                        <i class="bi bi-translate me-1"></i> မြန်မာ (MM)
+                        <i class="bi bi-translate me-1"></i> 日本語 (JP)
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="border-radius: 12px; min-width: 120px; background-color: var(--card-bg);">
                         <li><a class="dropdown-item fw-bold text-primary" href="loa-portal.html">🇲🇲 မြန်မာ</a></li>
@@ -47,18 +47,16 @@
                 <h1 class="serif-font fw-bold text-white mb-3" style="font-size: 2.8rem;">University LOA Portal</h1>
                 
                 <p class="text-light mx-auto mb-4" style="max-width: 600px; opacity: 0.85; font-size: 1rem; line-height: 1.7;">
-                    First Screening အောင်မြင်ထားသော ကျောင်းသားများအတွက် ဂျပန်တက္ကသိုလ် အသီးသီးသို့ Letter of Provisional Acceptance (LOA) တောင်းခံရာတွင် အသုံးပြုရမည့် ကိုယ်တွေ့လမ်းညွှန်များ။
+                    第一次審査合格者が日本の各大学から内諾書（LOA）を申請する際に使用する実践ガイド。
                 </p>
                 
                 <a href="index.html" class="btn btn-outline-light rounded-pill px-4 py-2" style="font-size: 0.9rem;">
-                    <i class="bi bi-arrow-left me-2"></i> Main Roadmap သို့ ပြန်သွားရန်
+                    <i class="bi bi-arrow-left me-2"></i> メインロードマップに戻る
                 </a>
             </div>
         </header>
 
         <main class="container mb-5 z-2" style="margin-top: -30px; position: relative;">
-            
-            <!-- 🔍 SEARCH BAR SECTION (NEW) -->
             <div class="row justify-content-center mb-4">
                 <div class="col-md-8 col-lg-6">
                     <div class="input-group search-box shadow-sm" style="border-radius: 50px; overflow: hidden; border: 2px solid var(--border-color); background: var(--card-bg);">
@@ -69,7 +67,6 @@
             </div>
 
             <div class="row g-3 justify-content-center" id="university-grid">
-                <!-- Cards will be injected here automatically -->
             </div>
         </main>
 
@@ -78,15 +75,15 @@
             <div class="modal-dialog modal-xl modal-dialog-scrollable">
                 <div class="modal-content" style="border-radius: 16px; border: none; box-shadow: 0 25px 50px rgba(0,0,0,0.3);">
                     <div class="modal-header bg-dark text-white" style="border-radius: 16px 16px 0 0; padding: 20px 30px;">
-                        <h5 class="modal-title serif-font text-warning" id="mdModalTitle">Document</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title serif-font text-warning" id="mdModalTitle">ドキュメント</h5>
+                        <button type="button" class="btn-閉じる btn-閉じる-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body p-4 p-md-5">
                         <div id="mdModalBody" class="markdown-body"></div>
                     </div>
                     <div class="modal-footer bg-light d-flex justify-content-between align-items-center" style="border-radius: 0 0 16px 16px; padding: 15px 30px;">
-                        <span class="text-muted small"><i class="bi bi-info-circle me-1"></i> ဤစာတမ်းအား မူရင်း .md ဖိုင်မှ တိုက်ရိုက် ရယူဖော်ပြထားခြင်း ဖြစ်ပါသည်။</span>
-                        <button type="button" class="btn btn-dark rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+                        <span class="text-muted small"><i class="bi bi-info-circle me-1"></i> この文書は元の .md ファイルから直接取得して表示されています。</span>
+                        <button type="button" class="btn btn-dark rounded-pill px-4" data-bs-dismiss="modal">閉じる</button>
                     </div>
                 </div>
             </div>
@@ -111,7 +108,7 @@
                     system: "AAD SYSTEM",
                     color: "#0984e3",
                     icon: "bi-bank2",
-                    desc: "Admissions Assistance Desk (AAD) အွန်လိုင်းစနစ်ကို အသုံးပြု၍ ပရော်ဖက်ဆာများထံ ယာယီလက်ခံကြောင်းပေးစာ (LoA) တောင်းခံခြင်း အဆင့်ဆင့် လမ်းညွှန်။",
+                    desc: "アドミッションズ・アシスタンス・デスク（AAD）オンラインシステムを利用して教授へ内諾書（LOA）を申請するためのステップバイステップガイド。",
                     author: "Yan Naing Kyaw Tint",
                     authorImage: "yan_naing_kyaw_tint.jpg", 
                     socialLink: "https://github.com/robinglory", 
@@ -124,7 +121,7 @@
                     system: "T-CENS SYSTEM",
                     color: "#e84393",
                     icon: "bi-mortarboard-fill",
-                    desc: "Graduate School of Engineering အတွက် T-cens Online System မှတစ်ဆင့် LOA တောင်းခံခြင်းနှင့် Email ပေးပို့ရမည့် ပုံစံအပြည့်အစုံ လမ်းညွှန်။",
+                    desc: "大学院工学系研究科向けT-censオンラインシステムを通じたLOA申請およびメール送信フォーマットの完全ガイド。",
                     author: "Yan Naing Kyaw Tint",
                     authorImage: "yan_naing_kyaw_tint.jpg", 
                     socialLink: "https://github.com/robinglory", 
@@ -137,7 +134,7 @@
                     system: "UNKNOWN SYSTEM",
                     color: "#FFEA68",
                     icon: "bi-mortarboard-fill",
-                    desc: "စာရွက်စာတမ်း တင်သွင်းရန်နှင့် Email ပေးပို့ရမည့် ပုံစံအပြည့်အစုံ လမ်းညွှန်။",
+                    desc: "書類提出およびメール送信のための完全ガイドフォーマット。",
                     author: "Unknown Author",
                     authorImage: "",
                     socialLink: "",
@@ -154,13 +151,12 @@
             function renderCards(data) {
                 let htmlContent = '';
 
-                // Search ရလဒ် မတွေ့ပါက ပြသမည့် စာသား
                 if (data.length === 0) {
                     grid.innerHTML = `
                         <div class="col-12 text-center py-5">
                             <i class="bi bi-search text-muted" style="font-size: 3rem;"></i>
                             <h5 class="mt-3 fw-bold" style="color: var(--dark-navy);">University not found</h5>
-                            <p class="text-secondary">သင်ရှာဖွေသော တက္ကသိုလ်လမ်းညွှန်ကို လက်ရှိတွင် မရေးသားရသေးပါ။</p>
+                            <p class="text-secondary">検索された大学のガイドラインは現在作成されていません。</p>
                         </div>`;
                     return;
                 }
@@ -197,7 +193,7 @@
                                     ${socialHtml}
                                 </div>
                                 <button onclick="viewMarkdown('${uni.mdFile}', '${uni.name} - ${uni.system} Guide')" class="btn uni-card-btn">
-                                    <i class="bi bi-journal-text me-1"></i> ဖတ်ရှုရန် ဖွင့်မည်
+                                    <i class="bi bi-journal-text me-1"></i> ガイドを読む
                                 </button>
                             </div>
                         </div>
@@ -207,26 +203,22 @@
                 grid.innerHTML = htmlContent;
             }
 
-            // 3. Initial Load (Page စဖွင့်ချိန် ကတ်အားလုံးကို ပြမည်)
             renderCards(universities);
 
-            // 4. Live Search Event Listener (စာရိုက်လိုက်သည်နှင့် အလုပ်လုပ်မည်)
             searchInput.addEventListener('input', (e) => {
                 const searchTerm = e.target.value.toLowerCase().trim();
-                
-                // Name သို့မဟုတ် System တွင် ရှာဖွေသော စာလုံးပါဝင်ပါက Filter လုပ်ပါမည်
+
                 const filteredData = universities.filter(uni => {
                     return uni.name.toLowerCase().includes(searchTerm) || 
                         uni.system.toLowerCase().includes(searchTerm);
                 });
 
-                // Filter လုပ်ထားသော ကတ်များကိုသာ ပြန်လည်ပြသမည်
                 renderCards(filteredData);
             });
         </script>
     </body>
 
-<!-- 🌐 ELEGANT MINIMAL FOOTER -->
+     <!-- 🌐 ELEGANT MINIMAL FOOTER -->
     <footer>
         <div class="container">
             <p class="mb-1 text-white serif-font" style="font-size: 1.3rem; letter-spacing: 2px;">MEXT SCHOLARSHIP ROADMAP</p>
@@ -235,13 +227,13 @@
             <!-- 📜 MYANMAR LICENSE INFO -->
             <div class="license-box">
                 <i class="bi bi-shield-check text-warning fs-5 d-block mb-1"></i>
-                <strong class="text-white d-block mb-1">ပညာရေးဆိုင်ရာ အခမဲ့ မျှဝေခွင့် လိုင်စင် (Open Educational Resource License)</strong>
-                ဤဝဘ်ဆိုက်ရှိ လမ်းညွှန်စာတမ်းများနှင့် မာတိကာများအားလုံးကို မျိုးဆက်သစ် မြန်မာကျောင်းသား/သူများ၏ ပညာရေးအလို့ငှာ အခမဲ့ လွတ်လပ်စွာ ဖတ်ရှုခြင်း၊ ကူးယူသိမ်းဆည်းခြင်းနှင့် မျှဝေအသုံးပြုခြင်းများကို ခွင့်ပြုထားပါသည်။ 
-                <span class="text-warning">(သတိပြုရန် - စီးပွားရေးဆန်ဆန် ရောင်းချခြင်း သို့မဟုတ် တစ်ကိုယ်ရေ ကိုယ်ကျိုးစီးပွားအတွက် မူပိုင်ခွင့်အလွဲသုံးစား ပြုလုပ်ခြင်းကို လုံးဝ ခွင့်မပြုပါ)။</span>
+                <strong class="text-white d-block mb-1">オープン教育リソースライセンス (Open Educational Resource License)</strong>
+                当ウェブサイト内のすべてのガイドラインおよびコンテンツは、次世代のミャンマー人学生の教育目的のために、無料で自由に閲覧、保存、共有することが許可されています。 
+                <span class="text-warning">（注意 - 商業目的での販売や、個人的な利益のための著作権の悪用は固く禁じられています）。</span>
             </div>
             <!-- 👀 LIVE VISITOR COUNTER BADGE -->
             <div class="visitor-stats">
-                <span><i class="bi bi-eye-fill text-info me-1"></i> စုစုပေါင်း ဝင်ရောက်ဖတ်ရှုသူ -</span>
+                <span><i class="bi bi-eye-fill text-info me-1"></i> 累計訪問者数 - -</span>
                 <img src="https://api.visitorbadge.io/api/visitors?path=robinglory.github.io.myanmar-mext-2027-roadmap&label=VIEWS&labelColor=%230f172a&countColor=%23d4af37&style=flat" alt="Visitor Count" style="vertical-align: middle;">
             </div>
 
