@@ -3,6 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- 🌐 Primary Meta Tags & Social Media Open Graph -->
+        <meta name="title" content="University LOA Portal | Phase 2">
+        <meta name="description" content="ဂျပန်တက္ကသိုလ် အသီးသီးသို့ Letter of Provisional Acceptance (LOA) တောင်းခံရာတွင် အသုံးပြုရမည့် ကိုယ်တွေ့လမ်းညွှန်များ။">
+        
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://robinglory.github.io/myanmar-mext-2027-roadmap/loa-portal.html">
+        <meta property="og:title" content="University LOA Portal | MEXT Phase 2">
+        <meta property="og:description" content="ဂျပန်တက္ကသိုလ် အသီးသီးသို့ Letter of Provisional Acceptance (LOA) တောင်းခံရာတွင် အသုံးပြုရမည့် ကိုယ်တွေ့လမ်းညွှန်များ။">
+        <meta property="og:image" content="https://plus.unsplash.com/premium_photo-1661964177687-57387c2cbd14?q=80&w=1200&auto=format&fit=crop">
         <title>Phase 2: LOA Application Portal | MEXT 2027</title>
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,9 +45,18 @@
             </div>
         </header>
 
-        <!-- 🎓 COMPACT UNIVERSITY DOSSIER CARDS -->
         <main class="container mb-5 z-2" style="margin-top: -30px; position: relative;">
-            <!-- JavaScript မှ ကတ်များကို ဤနေရာတွင် အလိုအလျောက် ထည့်သွင်းပေးပါမည် (Row G-3 ဖြင့် ကျစ်လျစ်စွာပြမည်) -->
+            
+            <!-- 🔍 SEARCH BAR SECTION (NEW) -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8 col-lg-6">
+                    <div class="input-group search-box shadow-sm" style="border-radius: 50px; overflow: hidden; border: 2px solid var(--border-color); background: var(--card-bg);">
+                        <span class="input-group-text bg-transparent border-0 ps-4" style="color: var(--accent-gold); font-size: 1.2rem;"><i class="bi bi-search"></i></span>
+                        <input type="text" id="searchInput" class="form-control border-0 bg-transparent py-3 shadow-none" placeholder="Search University (e.g., Osaka, Tokyo)..." style="color: var(--text-color); font-weight: 500;">
+                    </div>
+                </div>
+            </div>
+
             <div class="row g-3 justify-content-center" id="university-grid">
                 <!-- Cards will be injected here automatically -->
             </div>
@@ -73,8 +91,9 @@
         <script src="script.js"></script>
 
         <!-- ⚙️ DYNAMIC RENDERING SCRIPT -->
+        <!-- ⚙️ DYNAMIC RENDERING & SEARCH SCRIPT -->
         <script>
-            // 1. Database (ကျောင်းအသစ်နှင့် ရေးသားသူအသစ်များ ထပ်တိုးရန်)
+            // 1. Database
             const universities = [
                 {
                     name: "Osaka University",
@@ -85,7 +104,7 @@
                     author: "Yan Naing Kyaw Tint",
                     authorImage: "passport_photo.jpg", 
                     socialLink: "https://github.com/robinglory", 
-                    socialIcon: "bi-github", // ဥပမာ- bi-facebook, bi-linkedin, bi-telegram
+                    socialIcon: "bi-github", 
                     authorBg: "d4af37", 
                     mdFile: "osaka-university-aad-guide.md"
                 },
@@ -98,93 +117,102 @@
                     author: "Yan Naing Kyaw Tint",
                     authorImage: "passport_photo.jpg", 
                     socialLink: "https://github.com/robinglory", 
-                    socialIcon: "bi-github", // ဥပမာ- bi-facebook, bi-linkedin, bi-telegram
+                    socialIcon: "bi-github",
                     authorBg: "e84393", 
                     mdFile: "utokyo-mext-application-guide.md"
                 },
                 {
-                    name: "Unknown",
-                    system: "Unknown",
-                    color: "#64a832",
+                    name: "Unknown University",
+                    system: "UNKNOWN SYSTEM",
+                    color: "#FFEA68",
                     icon: "bi-mortarboard-fill",
-                    desc: "Unknown",
-                    author: "Unknown",
-                    authorImage: "", 
-                    socialLink: "https://facebook.com", 
-                    socialIcon: "bi-facebook",
-                    authorBg: "#64a832", 
-                    mdFile: "Unknown"
-                },
-                {
-                    name: "Unknown",
-                    system: "Unknown",
-                    color: "#3251a8",
-                    icon: "bi-mortarboard-fill",
-                    desc: "Unknown",
-                    author: "Aung Aung (Demo)",
-                    authorImage: "", 
-                    socialLink: "https://facebook.com", 
-                    socialIcon: "bi-facebook",
-                    authorBg: "#3251a8", 
-                    mdFile: "Unknown"
+                    desc: "စာရွက်စာတမ်း တင်သွင်းရန်နှင့် Email ပေးပို့ရမည့် ပုံစံအပြည့်အစုံ လမ်းညွှန်။",
+                    author: "Unknown Author",
+                    authorImage: "",
+                    socialLink: "",
+                    socialIcon: "",
+                    authorBg: "FFEA88",
+                    mdFile: "utokyo-mext-application.md"
                 }
-                // နောက်ထပ် ကျောင်းအသစ်များ ရောက်လာပါက ဤအောက်တွင် ထပ်ထည့်ပါ...
             ];
 
-            // 2. HTML Auto-Generator Logic
             const grid = document.getElementById('university-grid');
-            let htmlContent = '';
+            const searchInput = document.getElementById('searchInput');
 
-            universities.forEach(uni => {
-                const avatarName = encodeURIComponent(uni.author); 
-                
-                const imgSrc = uni.authorImage ? uni.authorImage : `https://ui-avatars.com/api/?name=${avatarName}&background=${uni.authorBg}&color=fff&rounded=true&bold=true`;
-                
+            // 2. HTML Auto-Generator Function (Reusable)
+            function renderCards(data) {
+                let htmlContent = '';
 
-                const socialHtml = uni.socialLink ? 
-                    `<a href="${uni.socialLink}" target="_blank" class="ms-auto text-decoration-none" style="color: ${uni.color}; font-size: 1.15rem; transition: transform 0.2s;">
-                        <i class="bi ${uni.socialIcon || 'bi-link-45deg'}"></i>
-                    </a>` : '';
+                // Search ရလဒ် မတွေ့ပါက ပြသမည့် စာသား
+                if (data.length === 0) {
+                    grid.innerHTML = `
+                        <div class="col-12 text-center py-5">
+                            <i class="bi bi-search text-muted" style="font-size: 3rem;"></i>
+                            <h5 class="mt-3 fw-bold" style="color: var(--dark-navy);">University not found</h5>
+                            <p class="text-secondary">သင်ရှာဖွေသော တက္ကသိုလ်လမ်းညွှန်ကို လက်ရှိတွင် မရေးသားရသေးပါ။</p>
+                        </div>`;
+                    return;
+                }
 
-                htmlContent += `
-                <div class="col-md-6 col-lg-4">
-                    <div class="uni-card-compact">
-                        <div class="uni-card-color-bar" style="background-color: ${uni.color};"></div>
-                        <div class="uni-card-body">
-                            
-                            <div class="d-flex align-items-center gap-3 mb-3">
-                                <div class="uni-card-icon" style="color: ${uni.color}; background: ${uni.color}15;">
-                                    <i class="bi ${uni.icon}"></i>
+                data.forEach(uni => {
+                    const avatarName = encodeURIComponent(uni.author); 
+                    const imgSrc = uni.authorImage ? uni.authorImage : `https://ui-avatars.com/api/?name=${avatarName}&background=${uni.authorBg}&color=fff&rounded=true&bold=true`;
+                    const socialHtml = uni.socialLink ? 
+                        `<a href="${uni.socialLink}" target="_blank" class="ms-auto text-decoration-none" style="color: ${uni.color}; font-size: 1.15rem; transition: transform 0.2s;">
+                            <i class="bi ${uni.socialIcon || 'bi-link-45deg'}"></i>
+                        </a>` : '';
+
+                    htmlContent += `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="uni-card-compact">
+                            <div class="uni-card-color-bar" style="background-color: ${uni.color};"></div>
+                            <div class="uni-card-body">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="uni-card-icon" style="color: ${uni.color}; background: ${uni.color}15;">
+                                        <i class="bi ${uni.icon}"></i>
+                                    </div>
+                                    <div>
+                                        <span class="uni-card-system" style="color: ${uni.color};">${uni.system}</span>
+                                        <h3 class="uni-card-title">${uni.name}</h3>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span class="uni-card-system" style="color: ${uni.color};">${uni.system}</span>
-                                    <h3 class="uni-card-title">${uni.name}</h3>
+                                <p class="uni-card-desc">${uni.desc}</p>
+                                <div class="uni-card-author d-flex align-items-center">
+                                    <img src="${imgSrc}" alt="${uni.author}" width="30" height="30" class="rounded-circle shadow-sm me-2" style="object-fit: cover; border: 1px solid #cbd5e1;">
+                                    <div class="d-flex flex-column lh-1">
+                                        <span class="text-muted" style="font-size: 0.55rem; font-weight: 700; text-transform: uppercase;">Guided By</span>
+                                        <span class="fw-bold" style="color: var(--dark-navy); font-size: 0.75rem;">${uni.author}</span>
+                                    </div>
+                                    ${socialHtml}
                                 </div>
-                            </div>
-
-                            <p class="uni-card-desc">${uni.desc}</p>
-
-                            <!-- 📝 Author Data & Social Link ပေါင်းထည့်ထားသော အပိုင်း -->
-                            <div class="uni-card-author d-flex align-items-center">
-                                <img src="${imgSrc}" alt="${uni.author}" width="30" height="30" class="rounded-circle shadow-sm me-2" style="object-fit: cover; border: 1px solid #cbd5e1;">
-                                <div class="d-flex flex-column lh-1">
-                                    <span class="text-muted" style="font-size: 0.55rem; font-weight: 700; text-transform: uppercase;">Guided By</span>
-                                    <span class="fw-bold" style="color: var(--dark-navy); font-size: 0.75rem;">${uni.author}</span>
-                                </div>
-                                ${socialHtml}
-                            </div>
-
                                 <button onclick="viewMarkdown('${uni.mdFile}', '${uni.name} - ${uni.system} Guide')" class="btn uni-card-btn">
                                     <i class="bi bi-journal-text me-1"></i> ဖတ်ရှုရန် ဖွင့်မည်
                                 </button>
-                                
                             </div>
                         </div>
                     </div>`;
                 });
 
                 grid.innerHTML = htmlContent;
-            </script>
+            }
+
+            // 3. Initial Load (Page စဖွင့်ချိန် ကတ်အားလုံးကို ပြမည်)
+            renderCards(universities);
+
+            // 4. Live Search Event Listener (စာရိုက်လိုက်သည်နှင့် အလုပ်လုပ်မည်)
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase().trim();
+                
+                // Name သို့မဟုတ် System တွင် ရှာဖွေသော စာလုံးပါဝင်ပါက Filter လုပ်ပါမည်
+                const filteredData = universities.filter(uni => {
+                    return uni.name.toLowerCase().includes(searchTerm) || 
+                        uni.system.toLowerCase().includes(searchTerm);
+                });
+
+                // Filter လုပ်ထားသော ကတ်များကိုသာ ပြန်လည်ပြသမည်
+                renderCards(filteredData);
+            });
+        </script>
     </body>
 
 <!-- 🌐 ELEGANT MINIMAL FOOTER -->
