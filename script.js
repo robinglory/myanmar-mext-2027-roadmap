@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", function() {
     new Chart(document.getElementById('funnelChart'), {
         type: 'bar',
         data: {
-            labels: ['Stage 1: ဖြေဆိုခွင့်', 'Stage 2: ရေးဖြေအောင်', 'Stage 3: MAJA ထောက်ခံ', 'Stage 4: သံရုံး အင်တာဗျူး', 'Stage 5: ခန့်မှန်းရလဒ်'],
+            labels: ['Stage 1: ဖြေဆိုခွင့်', 'Stage 2: ရေးဖြေအောင်', 'Stage 3: MAJA ထောက်ခံ', 'Stage 4: သံရုံး အင်တာဗျူး', 'Stage 5: 1st Screening Passed'],
             datasets: [{
-                data: [124, 67, 43, 32, 16], // ၄၃ ဦး ထည့်သွင်းပြီးဖြစ်သည်
+                data: [124, 67, 43, 32, 19], 
                 backgroundColor: ['#94a3b8', '#3b82f6', '#0284c7', '#f59e0b', '#10b981'],
                 borderRadius: 6,
                 barThickness: 30
