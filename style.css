@@ -1129,3 +1129,180 @@ body.dark-mode .btn-custom-outline:hover {
 .bg-li { background-color: #0a66c2; }
 .bg-copy { background-color: #475569; color: #ffffff; border: none; cursor: pointer; font-size: 0.9rem; padding: 0 15px; border-radius: 50px; height: 38px; font-weight: 600; }
 .bg-copy:hover { background-color: var(--accent-gold); color: #0f172a; }
+
+
+/* =========================================================
+   🚀 PHASE 2 GATEWAY BANNER STYLES
+   ========================================================= */
+.phase2-gateway .gateway-content {
+    background: linear-gradient(135deg, var(--dark-navy) 0%, #1e293b 100%);
+    border: 2px solid var(--accent-gold);
+    z-index: 1;
+}
+
+.gateway-btn {
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    transition: all 0.3s ease;
+}
+
+.gateway-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+    background-color: #fcd34d;
+}
+
+
+.contributor-badge {
+    display: inline-block;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 0.78rem;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e1;
+}
+
+body.dark-mode .contributor-badge {
+    background: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================================
+   🎓 LOA PORTAL - DYNAMIC COMPACT STYLES
+   ========================================================= */
+
+/* 🌟 DYNAMIC LOA HERO WITH UNSPLASH BG */
+.loa-hero-dynamic {
+    position: relative;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    /* Overlay Color များကို Dark Navy ပေါ် အခြေခံထားပါသည် */
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.75) 100%), 
+                url('https://images.unsplash.com/photo-1714970499548-7aec76f22af9?q=80&w=435&auto=format&fit=crop') center/cover no-repeat;
+    border-bottom: 3px solid var(--accent-gold);
+}
+
+/* 🎓 COMPACT UNIVERSITY CARDS */
+.uni-card-compact {
+    background: var(--card-bg);
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.uni-card-compact:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+body.dark-mode .uni-card-compact {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.uni-card-color-bar {
+    width: 100%;
+    height: 4px;
+}
+
+.uni-card-body {
+    padding: 18px 20px; /* Padding ချုံ့ထားပါသည် */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Tighter Icon & Text */
+.uni-card-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.uni-card-system {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.uni-card-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.15rem; /* Title အနည်းငယ် သေးထားပါသည် */
+    color: var(--text-color);
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+.uni-card-desc {
+    font-size: 0.85rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 12px 0 18px 0;
+    flex-grow: 1;
+}
+body.dark-mode .uni-card-desc { color: #94a3b8; }
+
+/* Tighter Author Pill */
+.uni-card-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+body.dark-mode .uni-card-author {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+body.dark-mode .uni-card-author .fw-bold {
+    color: #e2e8f0 !important;
+}
+
+/* Card Button */
+.uni-card-btn {
+    background-color: transparent;
+    border: 1px solid #cbd5e1;
+    color: var(--dark-navy);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    width: 100%;
+}
+.uni-card-btn:hover {
+    background-color: var(--dark-navy);
+    color: var(--accent-gold);
+    border-color: var(--dark-navy);
+}
+
+body.dark-mode .uni-card-btn {
+    border-color: #475569;
+    color: #cbd5e1;
+}
+body.dark-mode .uni-card-btn:hover {
+    background-color: var(--accent-gold);
+    color: #0f172a;
+    border-color: var(--accent-gold);
+}
