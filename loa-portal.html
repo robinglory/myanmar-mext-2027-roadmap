@@ -27,6 +27,18 @@
 
         <!-- 🌟 DYNAMIC HERO SECTION WITH NEW BACKGROUND -->
         <header class="loa-hero-dynamic">
+            <div class="position-absolute top-0 end-0 m-3 m-md-4 z-3">
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle rounded-pill px-3 fw-bold" type="button" data-bs-toggle="dropdown" style="font-size: 0.85rem; background: rgba(0,0,0,0.4); backdrop-filter: blur(5px);">
+                        <i class="bi bi-translate me-1"></i> <span id="currentLangText">မြန်မာ (MM)</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="border-radius: 12px; min-width: 130px; background-color: var(--card-bg);">
+                        <li><a class="dropdown-item fw-bold text-primary" href="#" onclick="changeLanguage('mm')">🇲🇲 မြန်မာ</a></li>
+                        <li><a class="dropdown-item fw-bold text-danger" href="#" onclick="changeLanguage('en')">🇬🇧 English</a></li>
+                        <li><a class="dropdown-item fw-bold text-success" href="#" onclick="changeLanguage('jp')">🇯🇵 日本語</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="container text-center position-relative z-2">
                 <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.3);">
                     <i class="bi bi-shield-lock-fill text-warning"></i>

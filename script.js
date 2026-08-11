@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     new Chart(document.getElementById('funnelChart'), {
         type: 'bar',
         data: {
-            labels: ['Stage 1: ဖြေဆိုခွင့်', 'Stage 2: ရေးဖြေအောင်', 'Stage 3: MAJA ထောက်ခံ', 'Stage 4: သံရုံး အင်တာဗျူး', 'Stage 5: 1st Screening Passed'],
+            labels: ['Stage 1:', 'Stage 2:', 'Stage 3:', 'Stage 4:', 'Stage 5:'],
             datasets: [{
                 data: [124, 67, 43, 32, 19], 
                 backgroundColor: ['#94a3b8', '#3b82f6', '#0284c7', '#f59e0b', '#10b981'],
@@ -107,17 +107,17 @@ document.addEventListener("DOMContentLoaded", function() {
     new Chart(document.getElementById('genderChart'), {
         type: 'bar',
         data: {
-            labels: ['Stage 1: မူလ (၁၂၄ ဦး)', 'Stage 4: အင်တာဗျူး (၃၂ ဦး)'],
+            labels: ['Stage 1: Initial 124', 'Stage 4: Interview 34'],
             datasets: [
                 {
-                    label: 'Female (အမျိုးသမီး)',
+                    label: 'Female',
                     data: [90, 20], // ၉၀ ဦး မှ ၂၀ ဦး[cite: 8, 9, 11]
                     backgroundColor: '#3b82f6',
                     borderRadius: 4,
                     barThickness: 25
                 },
                 {
-                    label: 'Male (အမျိုးသား)',
+                    label: 'Male',
                     data: [34, 12], // ၃၄ ဦး မှ ၁၂ ဦး[cite: 8, 9, 11]
                     backgroundColor: '#0f172a',
                     borderRadius: 4,
@@ -199,7 +199,6 @@ function toggleTheme() {
         localStorage.setItem('mext_theme', 'light');
     }
 
-    // 💬 Giscus Comment Box ကိုပါ Dark/Light ချက်ချင်း ပြောင်းပေးခြင်း
     const giscusTheme = isDark ? 'transparent_dark' : 'light';
     const iframe = document.querySelector('iframe.giscus-frame');
     if (iframe) {
