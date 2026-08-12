@@ -1416,3 +1416,34 @@ body.dark-mode .uni-card-btn:hover {
         font-size: 0.75rem !important;
     }
 }
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 580px !important; 
+        padding-top: 50px !important;
+    }
+    .loa-hero-dynamic {
+        padding-top: 50px !important;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 20px !important;
+        font-size: 1rem !important;
+    }
+    
+    .author-pill {
+        margin-bottom: 15px !important;
+    }
+
+    .hero-section .position-absolute,
+    .loa-hero-dynamic .position-absolute {
+        top: 15px !important;
+        right: 15px !important;
+        margin: 0 !important;
+    }
+
+    .hero-section .position-absolute button,
+    .loa-hero-dynamic .position-absolute button {
+        padding: 5px 12px !important;
+        font-size: 0.75rem !important;
+    }
+}
