@@ -1261,7 +1261,17 @@ body.dark-mode .analytics-wrapper .rounded-2.small {
 body.dark-mode .analytics-wrapper .rounded-2.small strong {
     color: var(--accent-gold) !important;
 }
-
+/* TOC Link Hover Effect & Dark Mode Fix */
+.toc-link:hover {
+    color: var(--accent-gold) !important;
+    text-decoration: underline !important;
+}
+body.dark-mode .toc-container details summary {
+    color: #f8fafc !important;
+}
+body.dark-mode .text-dark {
+    color: #e2e8f0 !important;
+}
 /* =========================================================
    🎓 LOA PORTAL - DYNAMIC COMPACT STYLES
    ========================================================= */

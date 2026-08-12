@@ -26,6 +26,32 @@ async function viewMarkdown(filename, title) {
         if (!response.ok) throw new Error(errorFetch);
         const text = await response.text();
         document.getElementById('mdModalBody').innerHTML = marked.parse(text);
+        const modalBody = document.getElementById('mdModalBody');
+        const headings = modalBody.querySelectorAll('h1, h2, h3');
+        
+        if (headings.length > 0) {
+            const tocTitle = window.location.href.includes('-jp.html') ? "目次 (Table of Contents)" : "မာတိကာ (Table of Contents)";
+            let tocHTML = `
+                <div class="toc-container mb-4 p-3 rounded-3" style="background: rgba(15, 23, 42, 0.05); border: 1px solid var(--border-color);">
+                    <details>
+                        <summary class="fw-bold" style="cursor: pointer; color: var(--dark-navy); list-style: none;">
+                            <i class="bi bi-list-nested me-2 text-primary"></i>${tocTitle} <i class="bi bi-chevron-down ms-2" style="font-size: 0.8rem;"></i>
+                        </summary>
+                        <ul class="mt-3 mb-0" style="list-style: none; padding-left: 10px; border-left: 2px solid var(--accent-gold);">`;
+            
+            headings.forEach((h, index) => {
+                const id = `heading-${index}`;
+                h.id = id; 
+                const indent = (h.tagName === 'H3' || h.tagName === 'H4') ? 'ms-4' : 'ms-2';
+                const fontSize = (h.tagName === 'H3' || h.tagName === 'H4') ? '0.85rem' : '0.95rem';
+                const fontWeight = h.tagName === 'H2' ? 'fw-bold' : '';
+                
+                tocHTML += `<li class="mb-2 ${indent}"><a href="#${id}" class="text-decoration-none toc-link ${fontWeight}" style="color: var(--text-color); font-size: ${fontSize};">${h.innerText}</a></li>`;
+            });
+            
+            tocHTML += `</ul></details></div>`;
+            modalBody.insertAdjacentHTML('afterbegin', tocHTML);
+        }
     } catch (error) {
         document.getElementById('mdModalBody').innerHTML = `
             <div class="alert alert-danger p-4 rounded-3">

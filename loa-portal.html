@@ -71,6 +71,41 @@
             <div class="row g-3 justify-content-center" id="university-grid">
                 <!-- Cards will be injected here automatically -->
             </div>
+            
+            <!-- 🤝 CALL FOR CONTRIBUTORS -->
+            <section class="container my-5 z-2 position-relative">
+                <div class="p-4 p-md-5 rounded-4 border shadow-sm" style="background-color: var(--card-bg); border-color: var(--border-color) !important;">
+                    <div class="text-center mb-4">
+                        <span class="badge bg-success mb-2 px-3 py-2" style="font-size: 0.8rem; letter-spacing: 1px;"><i class="bi bi-people-fill me-1"></i> JOIN THE COMMUNITY</span>
+                        <h3 class="serif-font fw-bold text-primary">ပါဝင်ကူညီရန် (Call for Contributors)</h3>
+                        <p class="text-secondary">သင်ကိုယ်တိုင် MEXT အောင်မြင်ထားသူတစ်ယောက်ဖြစ်ပြီး အခြားတက္ကသိုလ်တစ်ခုခုအတွက် LOA လျှောက်ထားမှုအတွေ့အကြုံရှိပါက နောင်လာနောက်သားများအတွက် မျှဝေပေးနိုင်ပါသည်။</p>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-7 mb-4 mb-lg-0">
+                            <h6 class="fw-bold mb-3"><i class="bi bi-list-check text-warning me-2"></i>ပံ့ပိုးပေးရမည့် အချက်အလက်များ (Required Data)</h6>
+                            <div class="p-3 rounded-3" style="background: rgba(0,0,0,0.03); border: 1px solid var(--border-color); font-family: monospace; font-size: 0.85rem;">
+                                <div class="text-secondary">name: <span class="text-dark">"တက္ကသိုလ်အမည် (ဥပမာ - Osaka University)"</span>,</div>
+                                <div class="text-secondary">system: <span class="text-dark">"အသုံးပြုရမည့်စနစ် (ဥပမာ - AAD SYSTEM)"</span>,</div>
+                                <div class="text-secondary">color: <span class="text-dark">"Card အရောင် (ဥပမာ - #0984e3)"</span>,</div>
+                                <div class="text-secondary">icon: <span class="text-dark">"Bootstrap Icon (ဥပမာ - bi-bank2)"</span>,</div>
+                                <div class="text-secondary">desc: <span class="text-dark">"အကျဉ်းချုပ် ရှင်းလင်းချက်"</span>,</div>
+                                <div class="text-secondary">author: <span class="text-dark">"သင့်အမည်"</span>,</div>
+                                <div class="text-secondary">authorImage: <span class="text-dark">"သင့်ဓာတ်ပုံလင့်ခ် (ဥပမာ - github.png)"</span>,</div>
+                                <div class="text-secondary">socialLink: <span class="text-dark">"သင့် Facebook သို့မဟုတ် LinkedIn လင့်ခ်"</span>,</div>
+                                <div class="text-secondary">socialIcon: <span class="text-dark">"bi-github (သို့) bi-facebook"</span>,</div>
+                                <div class="text-secondary">mdFile: <span class="text-dark">"လမ်းညွှန်အပြည့်အစုံပါသော .md ဖိုင်"</span></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 text-center">
+                            <div class="p-4 rounded-3 h-100 d-flex flex-column justify-content-center" style="background: rgba(59, 130, 246, 0.05); border: 1px dashed #3b82f6;">
+                                <i class="bi bi-github text-primary mb-2 d-block" style="font-size: 2.5rem;"></i>
+                                <p class="small mb-3" style="color: var(--text-color);">ပေးပို့လိုပါက ကျွန်တော့်၏ GitHub Repository တွင် <strong>Pull Request (PR)</strong> ပြုလုပ်နိုင်သလို၊ အောက်ပါ Email သို့လည်း အချက်အလက်များနှင့် .md ဖိုင်ကို တိုက်ရိုက်ပေးပို့နိုင်ပါသည်။</p>
+                                <a href="mailto:koyannaingkyawtint@gmail.com" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm"><i class="bi bi-envelope-paper-fill me-2"></i>Email ဖြင့် ပေးပို့ရန်</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <!-- Modal for Reading Markdown -->
@@ -207,26 +242,22 @@
                 grid.innerHTML = htmlContent;
             }
 
-            // 3. Initial Load (Page စဖွင့်ချိန် ကတ်အားလုံးကို ပြမည်)
             renderCards(universities);
 
-            // 4. Live Search Event Listener (စာရိုက်လိုက်သည်နှင့် အလုပ်လုပ်မည်)
             searchInput.addEventListener('input', (e) => {
                 const searchTerm = e.target.value.toLowerCase().trim();
-                
-                // Name သို့မဟုတ် System တွင် ရှာဖွေသော စာလုံးပါဝင်ပါက Filter လုပ်ပါမည်
+
                 const filteredData = universities.filter(uni => {
                     return uni.name.toLowerCase().includes(searchTerm) || 
                         uni.system.toLowerCase().includes(searchTerm);
                 });
 
-                // Filter လုပ်ထားသော ကတ်များကိုသာ ပြန်လည်ပြသမည်
                 renderCards(filteredData);
             });
         </script>
     </body>
 
-<!-- 🌐 ELEGANT MINIMAL FOOTER -->
+
     <footer>
         <div class="container">
             <p class="mb-1 text-white serif-font" style="font-size: 1.3rem; letter-spacing: 2px;">MEXT SCHOLARSHIP ROADMAP</p>
