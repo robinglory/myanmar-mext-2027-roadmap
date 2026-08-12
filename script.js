@@ -1,10 +1,21 @@
-// 🚀 MARKDOWN FETCH & RENDER FUNCTION
+// 🚀 1. MARKDOWN FETCH & RENDER FUNCTION
 async function viewMarkdown(filename, title) {
+
+    const isJapanese = window.location.href.includes('-jp.html');
+
+    const loadingText = isJapanese ? "ドキュメントを読み込んでいます..." : "စာတမ်းအချက်အလက်များကို ခေါ်ယူပြင်ဆင်နေပါသည်...";
+    const errorFetch = isJapanese ? "ファイルが見つからないか、パスが間違っています。" : "ဖိုင်ရှာမတွေ့ပါ သို့မဟုတ် လမ်းကြောင်းမှားယွင်းနေပါသည်။";
+    const errorTitle = isJapanese ? "ドキュメントを開けません" : "စာတမ်း ဖွင့်ရှု၍ မရပါ";
+    const errorNote = isJapanese ? 
+        "<strong>💡 注意 (For Local Testing):</strong> ローカル環境(<code>file:///...</code>)で直接開いている場合、ブラウザのセキュリティ制限(CORSポリシー)によりファイルの読み込みがブロックされる可能性があります。<br><br>- <strong>VS Code Live Server</strong> 拡張機能を使用するか、<br>- <strong>GitHub Pages</strong> にアップロードすると正常に動作します。" 
+        : 
+        "<strong>💡 သတိပြုရန် (For Local Testing):</strong> သင်သည် ယခု Web ကို ကွန်ပျူတာပေါ်တွင် <code>file:///...</code> ဖြင့် တိုက်ရိုက်ဖွင့်ထားပါက Browser ၏ လုံခြုံရေးစည်းကမ်း (CORS Policy) ကြောင့် ဖိုင်များကို Fetch လုပ်ခွင့် မပြုခြင်း ဖြစ်နိုင်ပါသည်။<br><br>- <strong>VS Code Live Server</strong> Extension ကိုသုံး၍ ဖွင့်ကြည့်ပါ၊ (သို့မဟုတ်)<br>- <strong>GitHub Pages</strong> သို့ Upload တင်လိုက်ပါက 100% အပြည့်အဝ အလုပ်လုပ်ပါမည်။";
+
     document.getElementById('mdModalTitle').innerHTML = `<i class="bi bi-file-earmark-text me-2"></i>${title}`;
     document.getElementById('mdModalBody').innerHTML = `
         <div class="text-center my-5 py-5">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
-            <p class="mt-3 text-muted fw-bold">စာတမ်းအချက်အလက်များကို ခေါ်ယူပြင်ဆင်နေပါသည်...</p>
+            <p class="mt-3 text-muted fw-bold">${loadingText}</p>
         </div>`;
     
     var mdModal = new bootstrap.Modal(document.getElementById('markdownModal'));
@@ -12,20 +23,17 @@ async function viewMarkdown(filename, title) {
 
     try {
         const response = await fetch(filename);
-        if (!response.ok) throw new Error('ဖိုင်ရှာမတွေ့ပါ သို့မဟုတ် လမ်းကြောင်းမှားယွင်းနေပါသည်။');
+        if (!response.ok) throw new Error(errorFetch);
         const text = await response.text();
         document.getElementById('mdModalBody').innerHTML = marked.parse(text);
     } catch (error) {
         document.getElementById('mdModalBody').innerHTML = `
             <div class="alert alert-danger p-4 rounded-3">
-                <h6 class="fw-bold"><i class="bi bi-exclamation-triangle-fill me-2"></i>စာတမ်း ဖွင့်ရှု၍ မရပါ</h6>
+                <h6 class="fw-bold"><i class="bi bi-exclamation-triangle-fill me-2"></i>${errorTitle}</h6>
                 <p class="mb-2"><strong>Error:</strong> ${error.message}</p>
                 <hr>
                 <p class="small mb-0">
-                    <strong>💡 သတိပြုရန် (For Local Testing):</strong> သင်သည် ယခု Web ကို ကွန်ပျူတာပေါ်တွင် <code>file:///...</code> ဖြင့် တိုက်ရိုက်ဖွင့်ထားပါက Browser ၏ လုံခြုံရေးစည်းကမ်း (CORS Policy) ကြောင့် ဖိုင်များကို Fetch လုပ်ခွင့် မပြုခြင်း ဖြစ်နိုင်ပါသည်။
-                    <br><br>
-                    - <strong>VS Code Live Server</strong> Extension ကိုသုံး၍ ဖွင့်ကြည့်ပါ၊ (သို့မဟုတ်)
-                    - <strong>GitHub Pages</strong> သို့ Upload တင်လိုက်ပါက 100% အပြည့်အဝ အလုပ်လုပ်ပါမည်။
+                    ${errorNote}
                 </p>
             </div>`;
     }
@@ -111,14 +119,14 @@ document.addEventListener("DOMContentLoaded", function() {
             datasets: [
                 {
                     label: 'Female',
-                    data: [90, 20], // ၉၀ ဦး မှ ၂၀ ဦး[cite: 8, 9, 11]
+                    data: [90, 20], 
                     backgroundColor: '#3b82f6',
                     borderRadius: 4,
                     barThickness: 25
                 },
                 {
                     label: 'Male',
-                    data: [34, 12], // ၃၄ ဦး မှ ၁၂ ဦး[cite: 8, 9, 11]
+                    data: [34, 12], 
                     backgroundColor: '#0f172a',
                     borderRadius: 4,
                     barThickness: 25
