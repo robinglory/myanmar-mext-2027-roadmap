@@ -127,7 +127,19 @@
             </div>
         </div>
 
-        <!-- 🌗 DARK MODE BUTTON -->
+        
+        <button id="aiChatBtn" class="ai-chat-btn" onclick="toggleChat()" title="Ask Glory San AI">
+            <i class="bi bi-robot"></i>
+        </button>
+
+        <div id="aiChatWidget" class="ai-chat-widget">
+            <div class="ai-chat-header">
+                <span><i class="bi bi-robot me-2"></i> Glory San AI</span>
+                <button class="btn-close btn-close-white" onclick="toggleChat()"></button>
+            </div>
+            <iframe src="chatbot.html" class="ai-chat-iframe"></iframe>
+        </div>
+    
         <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Dark/Light Theme">
             <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
         </button>

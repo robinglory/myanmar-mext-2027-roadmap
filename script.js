@@ -195,6 +195,10 @@ function toggleTheme() {
         localStorage.setItem('mext_theme', 'light');
     }
 }
+function toggleChat() {
+    const chatWidget = document.getElementById('aiChatWidget');
+    chatWidget.classList.toggle('active');
+}
 
 // 📲 COPY TO CLIPBOARD FUNCTION
 function copyPortalLink() {
