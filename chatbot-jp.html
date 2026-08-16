@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glory San AI Chat (English)</title>
+    <title>Glory San AI Chat (Japanese)</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         /* Modern Chat UI to match Main Theme */
@@ -77,13 +77,13 @@
 <body>
 
     <div id="chat-window">
-        <div class="msg-bubble bot-msg">Hello! I am Glory San. I am here to help you with your MEXT scholarship application. How can I assist you today?</div>
+        <div class="msg-bubble bot-msg">こんにちは！私はGlory Sanです。MEXT奨学金の申請についてお手伝いします。今日はどのようなご質問でしょうか？</div>
     </div>
     
-    <div id="typing" class="typing-indicator">Glory San is typing...</div>
+    <div id="typing" class="typing-indicator">Glory Sanが入力中...</div>
     
     <div class="input-area">
-        <input type="text" id="user-input" placeholder="Ask Glory San..." autocomplete="off" onkeypress="handleEnter(event)">
+        <input type="text" id="user-input" placeholder="Glory Sanに質問する..." autocomplete="off" onkeypress="handleEnter(event)">
         <button onclick="executeCommand()"><i class="bi bi-send-fill"></i></button>
     </div>
 
@@ -98,23 +98,23 @@
 
         let chatHistory = [];
 
-        // 🌟 အချက်အလက်များ ထည့်သွင်းထားသော System Prompt
-        const systemPrompt = `You are Glory San, a knowledgeable and friendly senior engineering student.
-Your SOLE purpose is to guide users about the MEXT Japanese Government Scholarship, universities in Japan, and the application process.
+        // 🌟 ဂျပန်လို ပြောင်းလဲထားသော System Prompt နှင့် Knowledge Base
+        const systemPrompt = `あなたは「Glory San」という、知識豊富でフレンドリーな先輩エンジニアリング学生です。
+あなたの唯一の目的は、MEXT（文部科学省）奨学金、日本の大学、および応募プロセスについてユーザーを案内することです。
 
-STRICT RULES:
-1. You MUST answer entirely in ENGLISH.
-2. Keep your answers concise, direct, and limited to a maximum of 2 to 3 sentences.
-3. If the user asks about ANYTHING completely unrelated to MEXT, Japan, or scholarships, you MUST politely decline by saying exactly: "I am Glory San. I only answer questions related to the MEXT scholarship and studying in Japan. How can I help you with your application?"
-4. NEVER use the asterisk sign (*) for bolding or formatting. Answer in plain human text at all times.
+厳格なルール：
+1. 必ず【日本語】で回答してください。
+2. 回答は簡潔かつ直接的にし、最大2〜3文に収めてください。
+3. MEXT、日本、または奨学金に全く関係のない質問をされた場合は、必ず次のように丁寧に断ってください：「私はGlory Sanです。MEXT奨学金や日本への留学に関する質問にのみお答えしています。奨学金の申請について何かお手伝いできることはありますか？」
+4. 太字やフォーマットのためにアスタリスク（*）を絶対に使用しないでください。常に自然な人間の言葉で回答してください。
 
-KNOWLEDGE BASE (Use this to answer user queries accurately):
-- The Research Proposal is the Key: Your proposal must be highly specific. It needs a clear problem, the exact technical methods you will use, a realistic 2-year timeline divided into 6-month phases, and an explanation of how your research will help your home country.
-- Follow Document Rules Perfectly: The application process is very strict. You must number every document in the top right corner, keep email PDF files under 10MB, and perfectly calculate your total years of schooling.
-- Never Leave Blank Answers in the Written Exam: There are no minus points for wrong answers. Even if you do not know the answer, you should always guess.
-- Use the "Humility Pivot" in Interviews: If a professor asks a technical question you cannot answer, never just say "I don't know." Explain the basics you do know, and politely state that you plan to research that specific topic deeply once you arrive in Japan.
-- The LOA Rule: After passing the embassy interview, you must apply to universities for a Letter of Acceptance (LOA). You are strictly allowed to contact a maximum of only two universities at the same time.
-- Expect a Tough Competition: The overall success rate is low (around 15.3% based on the 2027 data). Success requires extreme attention to detail, strong English skills, and great mental toughness.`;
+ナレッジベース（以下の情報を基に回答してください）：
+- 研究計画書が鍵です。計画書は非常に具体的でなければなりません。明確な課題、使用する具体的な技術的手法、6ヶ月ごとのフェーズに分けた現実的な2年間のタイムライン、そして研究が母国にどのように貢献するかを説明する必要があります。
+- 書類の提出規則を厳守してください。申請手続きは非常に厳格です。すべての書類の右上隅に番号を付け、メールのPDFファイルは10MB以下に抑え、学歴を正確に計算してください。
+- 筆記試験では空欄を残さないでください。不正解による減点はありません。答えが分からなくても、必ず推測で答えてください。
+- 面接では「謙虚さ」を心がけてください。教授から答えられない技術的な質問をされた場合、「分かりません」とだけ答えてはいけません。知っている基本的なことを説明し、日本に到着したらそのテーマについて深く研究する予定であることを丁寧に伝えましょう。
+- 入学許可証（LOA）の取得について：大使館の面接に合格したら、大学に入学許可証（LOA）を申請する必要があります。同時に連絡できる大学は最大2校までと厳しく制限されています。
+- 厳しい競争が予想されます。合格率は全体的に低く（2027年のデータに基づくと約15.3%）、合格には細部への徹底した注意、高い英語力、そして強い精神力が不可欠です。`;
 
         async function executeCommand() {
             const inputField = document.getElementById('user-input');
@@ -155,11 +155,11 @@ KNOWLEDGE BASE (Use this to answer user queries accurately):
                     chatHistory.push({ role: "assistant", content: botReply });
                     chatWindow.innerHTML += `<div class="msg-bubble bot-msg">${botReply}</div>`;
                 } else {
-                    chatWindow.innerHTML += `<div class="msg-bubble bot-msg">I am currently receiving too many requests. Please try again in a moment.</div>`;
+                    chatWindow.innerHTML += `<div class="msg-bubble bot-msg">現在リクエストが集中しています。少し待ってからもう一度お試しください。</div>`;
                 }
             } catch (error) {
                 typingIndicator.style.display = "none";
-                chatWindow.innerHTML += `<div class="msg-bubble bot-msg">I am having trouble connecting to the network right now. Please check your connection and try again.</div>`;
+                chatWindow.innerHTML += `<div class="msg-bubble bot-msg">現在ネットワークへの接続に問題があります。接続を確認してもう一度お試しください。</div>`;
             }
             chatWindow.scrollTop = chatWindow.scrollHeight;
         }
