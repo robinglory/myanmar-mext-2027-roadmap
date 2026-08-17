@@ -175,8 +175,10 @@ h1, h2, h3, h4, h5, h6, .serif-font {
         font-size: 0.75rem !important;
         margin-bottom: 12px !important;
         display: -webkit-box;
+        -webkit-line-clamp: 1; 
         -webkit-box-orient: vertical;
         overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .file-badge {
