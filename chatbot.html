@@ -155,7 +155,62 @@ KNOWLEDGE BASE (Use this to answer user queries accurately):
 
             const chatWindow = document.getElementById('chat-window');
             const typingIndicator = document.getElementById('typing');
-            
+            // EASTER EGGS COLLECTION
+            const lowerText = userText.toLowerCase();
+            let easterEggReply = "";
+            let iconClass = "bi-code-slash";
+
+            if (lowerText === "whois glory" || lowerText === "sudo mext") {
+                easterEggReply = "<strong>Easter Egg Unlocked! 🚀</strong><br><br>Built by Yan Naing Kyaw Tint with blood, sweat, and tears while anxiously waiting for MEXT results!";
+            } else if (lowerText === "ping") {
+                iconClass = "bi-wifi";
+                easterEggReply = "<strong>pong!</strong><br><br>Connection to MEXT servers is surprisingly stable today. 🌐";
+            } else if (lowerText.includes("coffee")) {
+                iconClass = "bi-cup-hot-fill";
+                easterEggReply = "☕ Here is your virtual coffee. Drink up, you're going to need it to finish that Research Proposal!";
+            } else if (lowerText === "rm -rf /") {
+                iconClass = "bi-shield-lock-fill";
+                easterEggReply = "Nice try, Hacker! 🛡️ But you can't delete my MEXT database. My defenses are impenetrable.";
+            } else if (lowerText === "intj") {
+                iconClass = "bi-brain";
+                easterEggReply = "Aha! An INTJ architect personality? Strategic, independent, and perfect for planning a solid 2-year research timeline. 🧠";
+            } else if (lowerText === "hackatom") {
+                iconClass = "bi-trophy-fill";
+                easterEggReply = "Ah, HackAtom 2024! 🏆 Winning takes resilience and persistence. Apply that same competitive spirit to MEXT, and you'll be unstoppable!";
+            } else if (lowerText.includes("konnichiwa") || lowerText.includes("arigato")) {
+                iconClass = "bi-translate";
+                easterEggReply = "I speak English here, but I admire your Japanese spirit! 🌸 Ganbatte kudasai!";
+            } else if (lowerText.includes("joke")) {
+                iconClass = "bi-emoji-laughing-fill";
+                easterEggReply = "Why did the engineering student cross the road?<br><br>To get to the MEXT interview... and panic about the technical questions! 😅";
+            } else if (lowerText.includes("when is the result") || lowerText.includes("mext result")) {
+                iconClass = "bi-hourglass-split";
+                easterEggReply = "Patience, grasshopper. The embassy moves at its own pace. Take a deep breath and keep coding! 🧘‍♂️";
+            } else if (lowerText.includes("i love you")) {
+                iconClass = "bi-heart-fill";
+                easterEggReply = "I am just an AI, but I love your dedication to studying in Japan! Keep pushing forward! ❤️";
+            }
+
+            // အကယ်၍ Easter Egg မိသွားပါက
+            if (easterEggReply !== "") {
+                chatWindow.innerHTML += `
+                    <div class="msg-row user">
+                        <div class="msg-bubble user-msg">${userText}</div>
+                    </div>`;
+                inputField.value = '';
+                
+                setTimeout(() => {
+                    chatWindow.innerHTML += `
+                        <div class="msg-row bot">
+                            <div class="avatar" style="background: #1e293b; color: #d4af37;"><i class="bi ${iconClass}"></i></div>
+                            <div class="msg-bubble bot-msg" style="border-left-color: #1e293b;">
+                                ${easterEggReply}
+                            </div>
+                        </div>`;
+                    chatWindow.scrollTop = chatWindow.scrollHeight;
+                }, 500); 
+                return; 
+            }
             chatWindow.innerHTML += `
                 <div class="msg-row user">
                     <div class="msg-bubble user-msg">${userText}</div>

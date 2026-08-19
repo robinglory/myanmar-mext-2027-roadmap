@@ -150,6 +150,60 @@
             const chatWindow = document.getElementById('chat-window');
             const typingIndicator = document.getElementById('typing');
             
+            // 🌟 10 EASTER EGGS COLLECTION (JAPANESE)
+            const lowerText = userText.toLowerCase();
+            let easterEggReply = "";
+            let iconClass = "bi-code-slash";
+
+            if (lowerText === "whois glory" || lowerText === "sudo mext") {
+                easterEggReply = "<strong>隠しメッセージ発見！(Easter Egg) 🚀</strong><br><br>MEXTの結果を不安に待ちながら、Yan Naing Kyaw Tintの血と汗と涙の結晶として作られました！";
+            } else if (lowerText === "ping") {
+                iconClass = "bi-wifi";
+                easterEggReply = "<strong>pong!</strong><br><br>今日のMEXTサーバーへの接続は驚くほど安定しています。 🌐";
+            } else if (lowerText.includes("coffee") || lowerText.includes("コーヒー")) {
+                iconClass = "bi-cup-hot-fill";
+                easterEggReply = "☕ バーチャルコーヒーをどうぞ。研究計画書を仕上げるために必要になるでしょう！";
+            } else if (lowerText === "rm -rf /") {
+                iconClass = "bi-shield-lock-fill";
+                easterEggReply = "ハッカーさん、惜しいですね！🛡️ でも私のMEXTデータベースは削除できません。防御は完璧です。";
+            } else if (lowerText === "intj") {
+                iconClass = "bi-brain";
+                easterEggReply = "なるほど！INTJ（建築家）タイプですね？戦略的で自立しており、2年間の研究計画を立てるのに最適です。🧠";
+            } else if (lowerText === "hackatom") {
+                iconClass = "bi-trophy-fill";
+                easterEggReply = "おお、HackAtom 2024ですね！🏆 勝つには回復力と粘り強さが必要です。その競争心をMEXTにも活かせば、無敵です！";
+            } else if (lowerText.includes("hello") || lowerText.includes("hi") || lowerText.includes("hey")) {
+                iconClass = "bi-translate";
+                easterEggReply = "Hello! ここでは日本語を話しますが、あなたの英語力は素晴らしいですね！🌸";
+            } else if (lowerText.includes("joke") || lowerText.includes("冗談")) {
+                iconClass = "bi-emoji-laughing-fill";
+                easterEggReply = "エンジニアの学生はなぜ道を渡ったの？<br><br>反対側でのMEXT面接に行くためさ...そして専門的な質問にパニックになるためね！😅";
+            } else if (lowerText.includes("result") || lowerText.includes("結果")) {
+                iconClass = "bi-hourglass-split";
+                easterEggReply = "忍耐です。大使館は独自のペースで動いています。深呼吸して、コーディングを続けましょう！🧘‍♂️";
+            } else if (lowerText.includes("love") || lowerText.includes("愛してる")) {
+                iconClass = "bi-heart-fill";
+                easterEggReply = "私はAIですが、日本留学へのあなたの情熱を愛しています！その調子で頑張って！❤️";
+            }
+            if (easterEggReply !== "") {
+                chatWindow.innerHTML += `
+                    <div class="msg-row user">
+                        <div class="msg-bubble user-msg">${userText}</div>
+                    </div>`;
+                inputField.value = '';
+                
+                setTimeout(() => {
+                    chatWindow.innerHTML += `
+                        <div class="msg-row bot">
+                            <div class="avatar" style="background: #1e293b; color: #d4af37;"><i class="bi ${iconClass}"></i></div>
+                            <div class="msg-bubble bot-msg" style="border-left-color: #1e293b;">
+                                ${easterEggReply}
+                            </div>
+                        </div>`;
+                    chatWindow.scrollTop = chatWindow.scrollHeight;
+                }, 500); 
+                return; 
+            }
             chatWindow.innerHTML += `
                 <div class="msg-row user">
                     <div class="msg-bubble user-msg">${userText}</div>
