@@ -246,3 +246,13 @@ function toggleTheme() {
         );
     }
 }
+window.onscroll = function() { updateProgressBar() };
+
+function updateProgressBar() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  
+  let scrolled = (winScroll / height) * 100;
+
+  document.getElementById("myBar").style.width = scrolled + "%";
+}

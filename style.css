@@ -1589,3 +1589,20 @@ body.dark-mode .uni-card-btn:hover {
         bottom: 155px;
     }
 }
+
+.progress-container {
+  width: 100%;
+  height: 4px; /* လိုင်းအထူ */
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* အခြား UI တွေရဲ့အပေါ်ဆုံးမှာ ပေါ်နေစေရန် */
+}
+
+.progress-bar {
+  height: 4px;
+  background: linear-gradient(to right, #FFD700, #FFA500); /* ရွှေရောင် Gradient */
+  width: 0%; /* အစမှာ 0% */
+  border-radius: 0 2px 2px 0;
+}
