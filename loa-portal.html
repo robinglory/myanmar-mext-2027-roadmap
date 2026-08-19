@@ -70,7 +70,9 @@
 
             <div class="row g-3 justify-content-center" id="university-grid">
                 <!-- Cards will be injected here automatically -->
-            </div>
+            </div>            
+            <!-- 🌟 PAGINATION CONTAINER (NEW) -->
+            <div id="pagination-container" class="mt-4"></div>
             
             <!-- 🤝 CALL FOR CONTRIBUTORS -->
             <section class="container my-5 z-2 position-relative">
@@ -148,8 +150,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="script.js"></script>
 
-        <!-- ⚙️ DYNAMIC RENDERING SCRIPT -->
-        <!-- ⚙️ DYNAMIC RENDERING & SEARCH SCRIPT -->
         <script>
             // 1. Database
             const universities = [
@@ -191,17 +191,34 @@
                     socialIcon: "bi-github",
                     authorBg: "FFEA88",
                     mdFile: "kyoto-university-aao-guide.md"
+                },
+                {
+                    name: "University of Tsukuba",
+                    system: "TSUKUBA ADMISSION",
+                    color: "#8e44ad",
+                    icon: "bi-award-fill",
+                    desc: "University of Tsukuba ဆီကနေ LOA ရဖို့အတွက် ပရော်ဖက်ဆာတွေဆီ တိုက်ရိုက် Email ပို့ဆက်သွယ်ရမယ့် ပုံစံ၊ လိုအပ်တဲ့ စာရွက်စာတမ်းတွေနဲ့ လက်ခံရရှိတဲ့အထိ ဆောင်ရွက်ရမယ့် အဆင့်ဆင့်ကို သေချာရှင်းပြပေးထားပါတယ်။",
+                    author: "Yan Naing Kyaw Tint",
+                    authorImage: "yan_naing_kyaw_tint.jpg",
+                    socialLink: "https://github.com/robinglory",
+                    socialIcon: "bi-github",
+                    authorBg: "8e44ad",
+                    mdFile: "tsukuba-mext-application-guide.md"
                 }
             ];
 
             const grid = document.getElementById('university-grid');
             const searchInput = document.getElementById('searchInput');
+            const paginationContainer = document.getElementById('pagination-container');
 
-            // 2. HTML Auto-Generator Function (Reusable)
-            function renderCards(data) {
+            // 🌟 Pagination Setup
+            let currentPage = 1;
+            const itemsPerPage = 6;
+            let currentData = [...universities];
+
+            function renderCards(data, page = 1) {
                 let htmlContent = '';
 
-                // Search ရလဒ် မတွေ့ပါက ပြသမည့် စာသား
                 if (data.length === 0) {
                     grid.innerHTML = `
                         <div class="col-12 text-center py-5">
@@ -209,10 +226,16 @@
                             <h5 class="mt-3 fw-bold" style="color: var(--dark-navy);">University not found</h5>
                             <p class="text-secondary">သင်ရှာဖွေသော တက္ကသိုလ်လမ်းညွှန်ကို လက်ရှိတွင် မရေးသားရသေးပါ။</p>
                         </div>`;
+                    paginationContainer.innerHTML = '';
                     return;
                 }
 
-                data.forEach(uni => {
+                // 🌟 Slice data for current page
+                const startIndex = (page - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+                const paginatedData = data.slice(startIndex, endIndex);
+
+                paginatedData.forEach(uni => {
                     const avatarName = encodeURIComponent(uni.author); 
                     const imgSrc = uni.authorImage ? uni.authorImage : `https://ui-avatars.com/api/?name=${avatarName}&background=${uni.authorBg}&color=fff&rounded=true&bold=true`;
                     const socialHtml = uni.socialLink ? 
@@ -252,21 +275,65 @@
                 });
 
                 grid.innerHTML = htmlContent;
+                renderPagination(data.length, page);
             }
 
-            renderCards(universities);
+            // 🌟 Render Pagination Controls
+            function renderPagination(totalItems, page) {
+                const totalPages = Math.ceil(totalItems / itemsPerPage);
+                
+                if (totalPages <= 1) {
+                    paginationContainer.innerHTML = '';
+                    return;
+                }
 
+                let paginationHTML = '<ul class="pagination justify-content-center m-0 custom-pagination">';
+                
+                paginationHTML += `<li class="page-item ${page === 1 ? 'disabled' : ''}">
+                    <a class="page-link shadow-sm" href="#" onclick="changePage(${page - 1}); return false;">
+                        <i class="bi bi-chevron-left"></i>
+                    </a>
+                </li>`;
+
+                for (let i = 1; i <= totalPages; i++) {
+                    paginationHTML += `<li class="page-item ${page === i ? 'active' : ''}">
+                        <a class="page-link shadow-sm fw-bold" href="#" onclick="changePage(${i}); return false;">${i}</a>
+                    </li>`;
+                }
+
+                paginationHTML += `<li class="page-item ${page === totalPages ? 'disabled' : ''}">
+                    <a class="page-link shadow-sm" href="#" onclick="changePage(${page + 1}); return false;">
+                        <i class="bi bi-chevron-right"></i>
+                    </a>
+                </li>`;
+
+                paginationHTML += '</ul>';
+                paginationContainer.innerHTML = paginationHTML;
+            }
+
+            // 🌟 Change Page Function
+            function changePage(newPage) {
+                currentPage = newPage;
+                renderCards(currentData, currentPage);
+                document.getElementById('university-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // Initial Render
+            renderCards(currentData, currentPage);
+
+            // 🌟 Search Function Update
             searchInput.addEventListener('input', (e) => {
                 const searchTerm = e.target.value.toLowerCase().trim();
 
-                const filteredData = universities.filter(uni => {
+                currentData = universities.filter(uni => {
                     return uni.name.toLowerCase().includes(searchTerm) || 
                         uni.system.toLowerCase().includes(searchTerm);
                 });
 
-                renderCards(filteredData);
+                currentPage = 1; // Reset to page 1 on search
+                renderCards(currentData, currentPage);
             });
-        </script>
+        </script>   
     </body>
 
 

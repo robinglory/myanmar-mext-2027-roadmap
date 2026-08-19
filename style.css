@@ -1214,7 +1214,56 @@ body.dark-mode .search-box input { color: #f8fafc !important; }
 .bg-copy { background-color: #475569; color: #ffffff; border: none; cursor: pointer; font-size: 0.9rem; padding: 0 15px; border-radius: 50px; height: 38px; font-weight: 600; }
 .bg-copy:hover { background-color: var(--accent-gold); color: #0f172a; }
 
+.custom-pagination .page-link {
+    color: var(--dark-navy);
+    border-color: var(--border-color);
+    background-color: var(--card-bg);
+    margin: 0 4px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
 
+.custom-pagination .page-link:hover {
+    background-color: #f1f5f9;
+    color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+.custom-pagination .page-item.active .page-link {
+    background-color: var(--dark-navy);
+    border-color: var(--dark-navy);
+    color: var(--accent-gold);
+}
+
+.custom-pagination .page-item.disabled .page-link {
+    color: #94a3b8;
+    background-color: var(--bg-color);
+    border-color: var(--border-color);
+    opacity: 0.7;
+}
+
+/* 🌙 Dark Mode Fixes */
+body.dark-mode .custom-pagination .page-link {
+    color: #e2e8f0;
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .custom-pagination .page-link:hover {
+    background-color: #334155;
+    color: var(--accent-gold);
+}
+
+body.dark-mode .custom-pagination .page-item.active .page-link {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: #0f172a; /* ရွှေရောင်နောက်ခံမှာ ထင်ရှားစေရန် အမည်းရင့်ရောင် သုံးထားသည် */
+}
+
+body.dark-mode .custom-pagination .page-item.disabled .page-link {
+    background-color: #0b0f19;
+    color: #475569;
+}
 /* =========================================================
    🚀 PHASE 2 GATEWAY BANNER STYLES
    ========================================================= */
