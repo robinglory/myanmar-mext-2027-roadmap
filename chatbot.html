@@ -164,6 +164,9 @@ KNOWLEDGE BASE (Use this to answer user queries accurately):
 
             if (lowerText === "whois glory" || lowerText === "sudo mext") {
                 easterEggReply = "<strong>Easter Egg Unlocked! 🚀</strong><br><br>Built by Yan Naing Kyaw Tint with blood, sweat, and tears while anxiously waiting for MEXT results!";
+            } else if (lowerText === "ynkt2027hri") {
+                iconClass = "bi-robot"; // HRI နဲ့ လိုက်ဖက်အောင် Robot Icon လေး ပြောင်းပေးထားပါတယ်
+                easterEggReply = "<strong>Easter Egg Unlocked! 🚀</strong><br><br>This is the exclusive blueprint of Yan Naing Kyaw Tint's Human-Robot Interaction Research Proposal: <a href='https://drive.google.com/file/d/1OV6Lql9K0FNYGALvjLvQrz1ot5XVuShv/view?usp=drive_link' target='_blank' style='color: #d4af37; font-weight: bold; text-decoration: underline;'>Click Here to View</a>!";
             } else if (lowerText === "ping") {
                 iconClass = "bi-wifi";
                 easterEggReply = "<strong>pong!</strong><br><br>Connection to MEXT servers is surprisingly stable today. 🌐";
@@ -193,7 +196,6 @@ KNOWLEDGE BASE (Use this to answer user queries accurately):
                 easterEggReply = "I am just an AI, but I love your dedication to studying in Japan! Keep pushing forward! ❤️";
             }
 
-            // အကယ်၍ Easter Egg မိသွားပါက
             if (easterEggReply !== "") {
                 chatWindow.innerHTML += `
                     <div class="msg-row user">
