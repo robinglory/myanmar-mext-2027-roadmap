@@ -1323,6 +1323,32 @@ body.dark-mode .toc-container details summary {
 body.dark-mode .text-dark {
     color: #e2e8f0 !important;
 }
+
+.toc-container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: -5px;
+    z-index: 1050; 
+
+    background: rgba(255, 255, 255, 0.95) !important; 
+    backdrop-filter: blur(10px);
+    
+    max-height: 45vh; 
+    overflow-y: auto; 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode .toc-container {
+    background: rgba(30, 41, 59, 0.95) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+.markdown-body h1, 
+.markdown-body h2, 
+.markdown-body h3 {
+    scroll-margin-top: 100px; 
+}
 /* =========================================================
    🎓 LOA PORTAL - DYNAMIC COMPACT STYLES
    ========================================================= */
