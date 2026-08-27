@@ -30,7 +30,7 @@ async function viewMarkdown(filename, title) {
         const headings = modalBody.querySelectorAll('h1, h2, h3');
         
         if (headings.length > 0) {
-            const tocTitle = window.location.href.includes('-jp.html') ? "目次 (Table of Contents)" : "မာတိကာ (Table of Contents)";
+            const tocTitle = window.location.href.includes('-jp.html') ? "目次" : "မာတိကာ";
             let tocHTML = `
                 <div class="toc-container mb-4 p-3 rounded-3" style="background: rgba(15, 23, 42, 0.05); border: 1px solid var(--border-color);">
                     <details>
