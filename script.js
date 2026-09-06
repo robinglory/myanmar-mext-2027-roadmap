@@ -256,3 +256,37 @@ function updateProgressBar() {
 
   document.getElementById("myBar").style.width = scrolled + "%";
 }
+
+//DYNAMIC READ TIME CALCULATOR
+function calculateReadTime(text) {
+    // 1. Strip out Markdown syntax (images, links, formatting)
+    let cleanText = text.replace(/!\[.*?\]\(.*?\)/g, ''); 
+    cleanText = cleanText.replace(/\[.*?\]\(.*?\)/g, '');
+    cleanText = cleanText.replace(/[#*`>_~-]/g, '');
+    
+    // 2. Remove all spaces/line breaks to count pure raw characters
+    cleanText = cleanText.replace(/\s+/g, '');
+
+    // 3. Calculate based on 400 characters per minute
+    const charCount = cleanText.length;
+    let readTime = Math.ceil(charCount / 400);
+
+    return readTime < 1 ? 1 : readTime; // Minimum 1 min read
+}
+
+async function fetchAndInjectReadTime(filename, elementId) {
+    try {
+        const response = await fetch(filename);
+        if (!response.ok) return;
+        const text = await response.text();
+        
+        const time = calculateReadTime(text);
+        const targetElement = document.getElementById(elementId);
+        
+        if (targetElement) {
+            targetElement.innerHTML = `<i class="bi bi-clock-history me-1"></i> ${time} min read`;
+        }
+    } catch (error) {
+        console.error("Read time calculation failed for:", filename);
+    }
+}

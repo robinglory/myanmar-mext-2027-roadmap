@@ -423,7 +423,6 @@
                     return;
                 }
 
-                // 🌟 Slice data for current page
                 const startIndex = (page - 1) * itemsPerPage;
                 const endIndex = startIndex + itemsPerPage;
                 const paginatedData = data.slice(startIndex, endIndex);
@@ -435,6 +434,9 @@
                         `<a href="${uni.socialLink}" target="_blank" class="ms-auto text-decoration-none" style="color: ${uni.color}; font-size: 1.15rem; transition: transform 0.2s;">
                             <i class="bi ${uni.socialIcon || 'bi-link-45deg'}"></i>
                         </a>` : '';
+
+                    // ⏳ Unique ID for Read Time
+                    const readTimeId = `read-time-${uni.name.replace(/\s+/g, '')}`;
 
                     htmlContent += `
                     <div class="col-md-6 col-lg-4">
@@ -451,6 +453,14 @@
                                     </div>
                                 </div>
                                 <p class="uni-card-desc">${uni.desc}</p>
+                                
+                                <!-- ⏳ READ TIME BADGE -->
+                                <div class="mb-3">
+                                    <span id="${readTimeId}" class="badge rounded-pill read-time-badge">
+                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="width: 10px; height: 10px;"></span> တွက်ချက်နေပါသည်...
+                                    </span>
+                                </div>
+
                                 <div class="uni-card-author d-flex align-items-center">
                                     <img src="${imgSrc}" alt="${uni.author}" width="30" height="30" class="rounded-circle shadow-sm me-2" style="object-fit: cover; border: 1px solid #cbd5e1;">
                                     <div class="d-flex flex-column lh-1">
@@ -469,9 +479,14 @@
 
                 grid.innerHTML = htmlContent;
                 renderPagination(data.length, page);
+
+                // 🚀 Trigger Fetch for Read Time after HTML is loaded
+                paginatedData.forEach(uni => {
+                    const readTimeId = `read-time-${uni.name.replace(/\s+/g, '')}`;
+                    fetchAndInjectReadTime(uni.mdFile, readTimeId);
+                });
             }
 
-            // 🌟 Render Pagination Controls
             function renderPagination(totalItems, page) {
                 const totalPages = Math.ceil(totalItems / itemsPerPage);
                 
@@ -504,7 +519,6 @@
                 paginationContainer.innerHTML = paginationHTML;
             }
 
-            // 🌟 Change Page Function
             function changePage(newPage) {
                 currentPage = newPage;
                 renderCards(currentData, currentPage);
@@ -514,7 +528,7 @@
             // Initial Render
             renderCards(currentData, currentPage);
 
-            // 🌟 Search Function Update
+            // Search Function
             searchInput.addEventListener('input', (e) => {
                 const searchTerm = e.target.value.toLowerCase().trim();
 
@@ -523,10 +537,10 @@
                         uni.system.toLowerCase().includes(searchTerm);
                 });
 
-                currentPage = 1; // Reset to page 1 on search
+                currentPage = 1; 
                 renderCards(currentData, currentPage);
             });
-        </script>   
+        </script> 
     </body>
 
 

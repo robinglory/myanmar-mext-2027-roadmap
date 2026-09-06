@@ -1623,12 +1623,37 @@ body.dark-mode .uni-card-btn:hover {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999; /* အခြား UI တွေရဲ့အပေါ်ဆုံးမှာ ပေါ်နေစေရန် */
+  z-index: 9999;
 }
 
 .progress-bar {
   height: 4px;
-  background: linear-gradient(to right, #FFD700, #FFA500); /* ရွှေရောင် Gradient */
+  background: linear-gradient(to right, #FFD700, #FFA500); 
   width: 0%; /* အစမှာ 0% */
   border-radius: 0 2px 2px 0;
+}
+
+.read-time-badge {
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .read-time-badge {
+    background-color: #1e293b;
+    color: #cbd5e1;
+    border-color: #334155;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .read-time-badge i {
+    color: var(--accent-gold);
 }

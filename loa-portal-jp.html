@@ -300,7 +300,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="script.js"></script>
 
-        <!-- ⚙️ DYNAMIC RENDERING & SEARCH SCRIPT -->
         <!-- ⚙️ DYNAMIC RENDERING & SEARCH SCRIPT WITH PAGINATION -->
         <script>
             // 1. Database
@@ -396,14 +395,12 @@
                     authorBg: "e4f239",
                     mdFile: "Waseda-jp.md"
                 }
-                
             ];
 
             const grid = document.getElementById('university-grid');
             const searchInput = document.getElementById('searchInput');
             const paginationContainer = document.getElementById('pagination-container');
 
-            // 🌟 Pagination Setup
             let currentPage = 1;
             const itemsPerPage = 6;
             let currentData = [...universities];
@@ -422,7 +419,6 @@
                     return;
                 }
 
-                // 🌟 Slice data for current page
                 const startIndex = (page - 1) * itemsPerPage;
                 const endIndex = startIndex + itemsPerPage;
                 const paginatedData = data.slice(startIndex, endIndex);
@@ -434,6 +430,9 @@
                         `<a href="${uni.socialLink}" target="_blank" class="ms-auto text-decoration-none" style="color: ${uni.color}; font-size: 1.15rem; transition: transform 0.2s;">
                             <i class="bi ${uni.socialIcon || 'bi-link-45deg'}"></i>
                         </a>` : '';
+
+                    // ⏳ Unique ID for Read Time
+                    const readTimeId = `read-time-${uni.name.replace(/\s+/g, '')}`;
 
                     htmlContent += `
                     <div class="col-md-6 col-lg-4">
@@ -450,6 +449,14 @@
                                     </div>
                                 </div>
                                 <p class="uni-card-desc">${uni.desc}</p>
+
+                                <!-- ⏳ READ TIME BADGE (Japanese) -->
+                                <div class="mb-3">
+                                    <span id="${readTimeId}" class="badge rounded-pill read-time-badge">
+                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="width: 10px; height: 10px;"></span> 計算中...
+                                    </span>
+                                </div>
+
                                 <div class="uni-card-author d-flex align-items-center">
                                     <img src="${imgSrc}" alt="${uni.author}" width="30" height="30" class="rounded-circle shadow-sm me-2" style="object-fit: cover; border: 1px solid #cbd5e1;">
                                     <div class="d-flex flex-column lh-1">
@@ -468,9 +475,14 @@
 
                 grid.innerHTML = htmlContent;
                 renderPagination(data.length, page);
+
+                // 🚀 Trigger Fetch for Read Time
+                paginatedData.forEach(uni => {
+                    const readTimeId = `read-time-${uni.name.replace(/\s+/g, '')}`;
+                    fetchAndInjectReadTime(uni.mdFile, readTimeId);
+                });
             }
 
-            // 🌟 Render Pagination Controls
             function renderPagination(totalItems, page) {
                 const totalPages = Math.ceil(totalItems / itemsPerPage);
                 
@@ -502,17 +514,14 @@
                 paginationContainer.innerHTML = paginationHTML;
             }
 
-            // 🌟 Change Page Function
             function changePage(newPage) {
                 currentPage = newPage;
                 renderCards(currentData, currentPage);
                 document.getElementById('university-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
 
-            // Initial Render
             renderCards(currentData, currentPage);
 
-            // 🌟 Search Function Update
             searchInput.addEventListener('input', (e) => {
                 const searchTerm = e.target.value.toLowerCase().trim();
 
@@ -521,7 +530,7 @@
                         uni.system.toLowerCase().includes(searchTerm);
                 });
 
-                currentPage = 1; // Reset to page 1 on search
+                currentPage = 1; 
                 renderCards(currentData, currentPage);
             });
         </script>
