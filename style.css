@@ -19,7 +19,91 @@ h1, h2, h3, h4, h5, h6, .serif-font {
     font-family: 'Playfair Display', serif;
     line-height: 1.4;
 }
+.editorial-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    height: 46px;
+    background-color: #1c1917;
+    border-bottom: 1px solid rgba(184, 147, 63, 0.35);
+    display: flex;
+    align-items: center;
+}
 
+.editorial-topbar .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.topbar-brand {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #f5f1eb;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.topbar-brand:hover {
+    color: var(--accent-gold, #b8933f);
+}
+
+.topbar-nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.topbar-link {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: #a8a29e;
+    text-decoration: none;
+    padding: 0 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.topbar-link:hover {
+    color: #f5f1eb;
+}
+
+.topbar-link.active {
+    color: #d4b05c;
+    border-bottom-color: var(--accent-gold, #b8933f);
+}
+
+/* Mobile View: Honda Y-E-S ပုံအတိုင်း တစ်ကြောင်းတည်း ညီညာနေစေရန် */
+@media (max-width: 576px) {
+    .editorial-topbar {
+        height: 42px;
+    }
+    .editorial-topbar .container {
+        gap: 8px;
+    }
+    .topbar-brand {
+        font-size: 0.66rem;
+        letter-spacing: 0.8px;
+    }
+    .topbar-nav {
+        gap: 12px;
+    }
+    .topbar-link {
+        font-size: 0.7rem;
+        letter-spacing: 0.2px;
+    }
+}
 /* 🌟 ELEGANT BILATERAL HERO SECTION */
 .hero-section {
     position: relative;
