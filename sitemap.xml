@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- 🇲🇲 Main Myanmar Pages -->
+  <!-- Main Myanmar Pages -->
   <url>
-    <loc>https://robinglory.github.io/myanmar-mext-2027-roadmap/index.html</loc>
+    <loc>https://robinglory.github.io/myanmar-mext-2027-roadmap/</loc>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://robinglory.github.io/myanmar-mext-2027-roadmap/loa-portal.html</loc>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- 🇯🇵 Japanese Pages -->
+  <url>
+    <loc>https://robinglory.github.io/myanmar-mext-2027-roadmap/financial-guide.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Japanese Pages -->
   <url>
     <loc>https://robinglory.github.io/myanmar-mext-2027-roadmap/index-jp.html</loc>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://robinglory.github.io/myanmar-mext-2027-roadmap/loa-portal-jp.html</loc>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

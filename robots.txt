@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://robinglory.github.io/myanmar-mext-2027-roadmap/sitemap.xml
