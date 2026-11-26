@@ -1657,3 +1657,79 @@ body.dark-mode .read-time-badge {
 body.dark-mode .read-time-badge i {
     color: var(--accent-gold);
 }
+
+html {
+    font-size: 13px;
+}
+
+body {
+    line-height: 1.65;
+    font-family: 'Noto Sans Myanmar', 'Noto Sans JP', sans-serif;
+}
+
+/* Tame oversized Hero & Section Headings */
+.hero-title {
+    font-size: 2.6rem !important;
+}
+
+.hero-subtitle {
+    font-size: 0.98rem !important;
+    margin-bottom: 24px !important;
+}
+
+#proportional-roadmap h2,
+#repository > .text-center h2 {
+    font-size: 2rem !important;
+}
+
+#proportional-roadmap p.text-secondary,
+#repository > .text-center p.text-secondary {
+    font-size: 0.95rem !important;
+}
+
+/* Cards & Analytics Compact Scaling */
+.master-card h3 {
+    font-size: 1.25rem !important;
+}
+
+.doc-title {
+    font-size: 1.05rem;
+}
+
+.doc-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.stat-number {
+    font-size: 1.45rem;
+}
+
+.analytics-hero-header h2 {
+    font-size: 1.35rem;
+}
+
+.analytics-hero-header p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+}
+
+/* Markdown Reader Modal (prevents giant headings in .md guides) */
+.markdown-body {
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+.markdown-body h1 { font-size: 1.55rem; }
+.markdown-body h2 { font-size: 1.3rem; }
+.markdown-body h3 { font-size: 1.1rem; }
+.markdown-body h4 { font-size: 0.98rem; }
+
+@media (max-width: 768px) {
+    html {
+        font-size: 13px;
+    }
+    .hero-title {
+        font-size: 1.9rem !important;
+    }
+}   

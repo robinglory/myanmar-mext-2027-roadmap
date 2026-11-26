@@ -43,7 +43,7 @@ async function viewMarkdown(filename, title) {
                 const id = `heading-${index}`;
                 h.id = id; 
                 const indent = (h.tagName === 'H3' || h.tagName === 'H4') ? 'ms-4' : 'ms-2';
-                const fontSize = (h.tagName === 'H3' || h.tagName === 'H4') ? '0.85rem' : '0.95rem';
+                const fontSize = (h.tagName === 'H3' || h.tagName === 'H4') ? '0.8rem' : '0.88rem';
                 const fontWeight = h.tagName === 'H2' ? 'fw-bold' : '';
                 
                 tocHTML += `<li class="mb-2 ${indent}"><a href="#${id}" class="text-decoration-none toc-link ${fontWeight}" style="color: var(--text-color); font-size: ${fontSize};">${h.innerText}</a></li>`;
@@ -67,8 +67,9 @@ async function viewMarkdown(filename, title) {
 
 // 📊 2027 DATA CHARTS INITIALIZATION
 document.addEventListener("DOMContentLoaded", function() {
-    Chart.defaults.font.family = "'Noto Sans Myanmar', sans-serif";
+    Chart.defaults.font.family = "'Noto Sans Myanmar', 'Noto Sans JP', sans-serif";
     Chart.defaults.color = "#64748b";
+    Chart.defaults.font.size = 10.5;
 
     // 1. Funnel Chart (Elegant Muted Colors)
     // 1. Funnel Chart (5 Stages Verified Data)
