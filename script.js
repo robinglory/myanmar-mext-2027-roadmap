@@ -76,12 +76,12 @@ document.addEventListener("DOMContentLoaded", function() {
     new Chart(document.getElementById('funnelChart'), {
         type: 'bar',
         data: {
-            labels: ['Stage 1:', 'Stage 2:', 'Stage 3:', 'Stage 4:', 'Stage 5:'],
+            labels: ['Applied', 'Doc Pass', 'Written', 'MAJA Rec', 'Interview', 'Selected'],
             datasets: [{
-                data: [124, 67, 43, 32, 19], 
-                backgroundColor: ['#94a3b8', '#3b82f6', '#0284c7', '#f59e0b', '#10b981'],
+                data: [228, 124, 67, 43, 32, 19],
+                backgroundColor: ['#cbd5e1', '#64748b', '#3b82f6', '#0284c7', '#f59e0b', '#10b981'],
                 borderRadius: 6,
-                barThickness: 30
+                barThickness: 26
             }]
         },
         options: { 
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
     new Chart(document.getElementById('genderChart'), {
         type: 'bar',
         data: {
-            labels: ['Stage 1: Initial 124', 'Stage 4: Interview 34'],
+            labels: ['Stage 1: Exam (124)', 'Stage 4: Interview (32)'],
             datasets: [
                 {
                     label: 'Female',
